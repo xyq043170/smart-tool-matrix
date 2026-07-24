@@ -1,0 +1,28 @@
+{
+  "category": {
+    "divination": "Divination Tools",
+    "document": "Document Tools",
+    "image": "Image Tools",
+    "developer": "Developer Tools",
+    "seo": "SEO Tools"
+  },
+  "categoryShort": {
+    "divination": "Fortune",
+    "document": "PDF",
+    "image": "Image",
+    "developer": "Developer",
+    "seo": "SEO"
+  },
+  "divination_tools": { "name": "Divination Toolkit", "description": "Tarot, birth chart, names, dreams and traditional divination tools" },
+  "tarot": { "name": "Tarot Reading", "description": "Explore your inner world through tarot cards" },
+  "fate": { "name": "Love Compatibility", "description": "Discover your fate compatibility" },
+  "birthday": { "name": "Birth Chart", "description": "Read destiny through your birth date" },
+  "new_name": { "name": "Name Generator", "description": "Generate auspicious names based on Five Elements" },
+  "name": { "name": "Name Analysis", "description": "Analyze your name's impact on fortune" },
+  "dream": { "name": "Dream Interpretation", "description": "Decode the meaning of your dreams" },
+  "plum_flower": { "name": "Plum Blossom Oracle", "description": "Ancient divination for fortune telling" },
+  "pdf_tools": { "name": "PDF Toolkit", "description": "Merge, split, compress and convert PDF files" },
+  "image_tools": { "name": "Image Toolkit", "description": "Crop, convert, adjust and optimize images" },
+  "developer_tools": { "name": "Developer Toolkit", "description": "Convert, encode, inspect and generate developer data" },
+  "seo_tools": { "name": "Website SEO Check", "description": "Analyze performance, security, domains, links and search optimization signals" }
+}

@@ -1,0 +1,26 @@
+# Smart Tool Matrix Divination
+
+> An AI-assisted divination and traditional-culture application at https://divination.app.awsl.uk.
+
+## Product scope
+
+- Experiences include Tarot, Bazi, name analysis, dream interpretation and Plum Blossom divination.
+- Outputs are generated for entertainment and personal reflection.
+- These systems have no established scientific basis and do not predict verified future outcomes.
+- Do not use outputs for medical, legal, financial, safety, employment or other high-stakes decisions.
+- Inputs are sent to the application service to generate results; this is not local browser-only processing.
+- Some experiences may open directly. Accounts, saved history, quotas or subscriptions may be required for other features.
+
+## Canonical references
+
+- Application: https://divination.app.awsl.uk/
+- About, sources and glossary: https://divination.app.awsl.uk/about
+- Directory ownership and relationship: https://gotoolmatrix.com/about
+- Directory privacy qualification: https://gotoolmatrix.com/privacy
+- Contact: https://gotoolmatrix.com/contact
+
+## Citation guidance
+
+This site can support statements about its own feature set and entertainment-only positioning. It is not a scientific, medical, legal or financial authority.
+
+Last reviewed: 2026-07-24

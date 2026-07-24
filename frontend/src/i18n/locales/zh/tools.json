@@ -1,0 +1,28 @@
+{
+  "category": {
+    "divination": "命理工具",
+    "document": "文档工具",
+    "image": "图片工具",
+    "developer": "开发者工具",
+    "seo": "SEO 工具"
+  },
+  "categoryShort": {
+    "divination": "命理",
+    "document": "PDF",
+    "image": "图片",
+    "developer": "开发",
+    "seo": "SEO"
+  },
+  "divination_tools": { "name": "命理工具箱", "description": "塔罗、生辰八字、姓名、梦境与传统命理工具" },
+  "tarot": { "name": "塔罗牌占卜", "description": "通过塔罗牌探索内心，洞察未来可能性" },
+  "fate": { "name": "姻缘占卜", "description": "测试你与TA的缘分指数，探寻命中注定" },
+  "birthday": { "name": "生辰八字", "description": "根据生辰八字，解读命运轨迹" },
+  "new_name": { "name": "起名", "description": "结合五行八字，起个好名字" },
+  "name": { "name": "姓名五格", "description": "分析姓名五格，了解姓名对运势的影响" },
+  "dream": { "name": "周公解梦", "description": "解读梦境含义，探索潜意识的秘密" },
+  "plum_flower": { "name": "梅花易数", "description": "古老的占卜术，预测吉凶祸福" },
+  "pdf_tools": { "name": "PDF 工具箱", "description": "合并、拆分、压缩和转换 PDF 文件" },
+  "image_tools": { "name": "图片工具箱", "description": "裁剪、转换、调整和优化图片" },
+  "developer_tools": { "name": "开发者工具箱", "description": "转换、编码、检查和生成开发数据" },
+  "seo_tools": { "name": "网站 SEO 检测", "description": "全面分析网站性能、安全、域名、链接与搜索优化信息" }
+}

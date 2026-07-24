@@ -1,0 +1,78 @@
+{
+    "builds": [
+        {
+            "src": "frontend/package.json",
+            "use": "@vercel/static-build"
+        },
+        {
+            "src": "main.py",
+            "use": "@vercel/python"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/api/(.*)",
+            "dest": "main.py"
+        },
+        {
+            "src": "/docs",
+            "dest": "main.py"
+        },
+        {
+            "src": "/openapi.json",
+            "dest": "main.py"
+        },
+        {
+            "src": "/pdf",
+            "dest": "https://pdf-tools-five-chi.vercel.app/"
+        },
+        {
+            "src": "/pdf/(.*)",
+            "dest": "https://pdf-tools-five-chi.vercel.app/$1"
+        },
+        {
+            "src": "/image",
+            "dest": "https://sharp-web-tools.vercel.app/"
+        },
+        {
+            "src": "/image/(.*)",
+            "dest": "https://sharp-web-tools.vercel.app/$1"
+        },
+        {
+            "src": "/developer",
+            "dest": "https://dev-tools-blue.vercel.app/"
+        },
+        {
+            "src": "/developer/(.*)",
+            "dest": "https://dev-tools-blue.vercel.app/$1"
+        },
+        {
+            "src": "/seo",
+            "dest": "https://seo-tools-project.onrender.com/check"
+        },
+        {
+            "src": "/seo/(.*)",
+            "dest": "https://seo-tools-project.onrender.com/check/$1"
+        },
+        {
+            "src": "/seo-api/(.*)",
+            "dest": "https://seo-tools-project.onrender.com/api/$1"
+        },
+        {
+            "src": "/_astro/(.*)",
+            "dest": "https://seo-tools-project.onrender.com/_astro/$1"
+        },
+        {
+            "src": "/fonts/(.*)",
+            "dest": "https://seo-tools-project.onrender.com/fonts/$1"
+        },
+        {
+            "src": "/(.*)\\.(.*)",
+            "dest": "/frontend/$1.$2"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "frontend/"
+        }
+    ]
+}

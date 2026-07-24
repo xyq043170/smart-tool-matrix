@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* tools-hub inspired palette */
+    --ink: 40 7% 9%;
+    --paper: 43 14% 95%;
+    --line: 43 10% 85%;
+    --muted-color: 40 3% 42%;
+    --card-surface: 0 0% 100%;
+    --header-bg: 43 14% 95% / 0.9;
+    --shadow-soft: 0 0% 11% / 0.08;
+
+    /* Accent colors */
+    --acid: 72 100% 63%;
+    --coral: 10 100% 69%;
+    --violet: 252 100% 83%;
+    --blue: 206 100% 76%;
+    --mint: 155 52% 67%;
+    --amber: 38 100% 71%;
+
+    /* shadcn/ui compat tokens */
+    --background: var(--paper);
+    --foreground: var(--ink);
+    --primary: 221 70% 48%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 43 10% 92%;
+    --secondary-foreground: 40 7% 9%;
+    --card: 0 0% 100%;
+    --card-foreground: var(--ink);
+    --popover: 0 0% 100%;
+    --popover-foreground: var(--ink);
+    --muted: 43 10% 92%;
+    --muted-foreground: var(--muted-color);
+    --accent: 43 10% 92%;
+    --accent-foreground: 40 7% 9%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: var(--line);
+    --input: var(--line);
+    --ring: 221 70% 48%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --ink: 43 10% 94%;
+    --paper: 40 7% 8%;
+    --line: 40 5% 19%;
+    --muted-color: 40 3% 62%;
+    --card-surface: 40 5% 10%;
+    --header-bg: 40 7% 7% / 0.92;
+    --shadow-soft: 0 0% 0% / 0.35;
+
+    --background: var(--paper);
+    --foreground: var(--ink);
+    --primary: 217 80% 60%;
+    --primary-foreground: 40 7% 8%;
+    --secondary: 40 5% 14%;
+    --secondary-foreground: 43 10% 94%;
+    --card: 40 5% 10%;
+    --card-foreground: var(--ink);
+    --popover: 40 5% 10%;
+    --popover-foreground: var(--ink);
+    --muted: 40 5% 14%;
+    --muted-foreground: var(--muted-color);
+    --accent: 40 5% 14%;
+    --accent-foreground: 43 10% 94%;
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 43 10% 94%;
+    --border: var(--line);
+    --input: var(--line);
+    --ring: 217 80% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+}
+
+@layer utilities {
+  .shell {
+    @apply mx-auto w-[min(1200px,calc(100%-32px))] md:w-[min(1200px,calc(100%-48px))];
+  }
+
+  .glass {
+    @apply border border-border bg-card shadow-sm;
+  }
+
+  .text-gradient-gold {
+    @apply text-foreground;
+  }
+
+  .text-gradient-mystic {
+    @apply text-foreground;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@keyframes enter {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
