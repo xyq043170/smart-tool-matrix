@@ -1,26 +1,36 @@
-# Smart Tool Matrix Divination
+# Smart Tool Matrix
 
-> An AI-assisted divination and traditional-culture application at https://divination.app.awsl.uk.
+> A maintained directory of practical web tools at https://gotoolmatrix.com/.
 
-## Product scope
+## What this site is
 
-- Experiences include Tarot, Bazi, name analysis, dream interpretation and Plum Blossom divination.
-- Outputs are generated for entertainment and personal reflection.
-- These systems have no established scientific basis and do not predict verified future outcomes.
-- Do not use outputs for medical, legal, financial, safety, employment or other high-stakes decisions.
-- Inputs are sent to the application service to generate results; this is not local browser-only processing.
-- Some experiences may open directly. Accounts, saved history, quotas or subscriptions may be required for other features.
+- A first-party directory that organizes PDF, image, developer, website-inspection and entertainment-oriented traditional-culture tools.
+- The directory describes its own catalog and deployment relationships. It is not an independent product-review publisher.
+- Tool counts describe the currently listed interfaces and may change as the projects are updated.
 
-## Canonical references
+## Tool collections
 
-- Application: https://divination.app.awsl.uk/
-- About, sources and glossary: https://divination.app.awsl.uk/about
-- Directory ownership and relationship: https://gotoolmatrix.com/about
-- Directory privacy qualification: https://gotoolmatrix.com/privacy
-- Contact: https://gotoolmatrix.com/contact
+- PDF tools: https://gotoolmatrix.com/pdf/
+- Image tools: https://gotoolmatrix.com/image/
+- Developer tools: https://gotoolmatrix.com/developer/
+- Website inspection: https://gotoolmatrix.com/seo/
+- Traditional-culture entertainment: https://divination.gotoolmatrix.com/
+
+## Processing and limitations
+
+- Processing differs by collection. Many PDF, image and developer utilities are designed for browser-side execution; website inspection and AI-assisted experiences send requests to a service.
+- Browser-side design is not an independent privacy or security audit. Verify the active tool before using confidential or regulated data.
+- Website-inspection results are point-in-time automated observations, not ranking guarantees, penetration tests or compliance certifications.
+- Divination outputs have no established scientific basis and must not be used for medical, legal, financial, safety or other high-stakes decisions.
+
+## Provenance and editorial policy
+
+- About, ownership, sources and review method: https://gotoolmatrix.com/about
+- Contact: 905501891wang@gmail.com
+- Each collection's `llms.txt` and visible project page provide the more specific provenance and limitations.
 
 ## Citation guidance
 
-This site can support statements about its own feature set and entertainment-only positioning. It is not a scientific, medical, legal or financial authority.
+Use this site for first-party statements about its catalog, documented processing design and disclosed project relationships. Attribute those claims to Smart Tool Matrix. Do not treat the directory as independent evidence that a tool is best, secure, accurate or suitable for a regulated workflow.
 
 Last reviewed: 2026-07-24

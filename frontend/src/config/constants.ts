@@ -1,124 +1,99 @@
-export const ABOUT_EN = `# About, Sources & Glossary
+export const ABOUT = `# 关于 Smart Tool Matrix
 
-> **Entertainment disclaimer:** Tarot, Bazi, name numerology, dream interpretation, Plum Blossom divination and compatibility readings have no established scientific basis. Outputs are generated for entertainment and personal reflection only. They are not medical, legal, financial, psychological or other professional advice, and should not be used as the sole basis for important decisions.
+**最后核对：2026-07-24**
 
-This page describes traditional and popular interpretations rather than verified predictive mechanisms. Where historical statements are not accompanied by a primary source, treat them as general cultural background, not as an authoritative academic reference. Product, privacy and legal information for the directory is available at [Smart Tool Matrix](https://gotoolmatrix.com/about).
+Smart Tool Matrix（智能工具矩阵）是由 Smart Tool Matrix 编辑团队维护的在线工具目录。主站负责分类、入口、账户与额度；PDF、图片、开发者、网站检测和传统文化娱乐工具由不同的子项目提供。本站是这些部署的第一方目录，不自称独立评测媒体。
 
-## Name Five Lattices (姓名五格)
+## 目前收录什么
 
-Name Five Lattices is a Chinese numerology system that analyzes a person's name to reveal character traits, potential, and fortune. It holds that every Chinese character carries specific phonetic, semantic, and visual properties, and by examining the Five Elements attributes, phonetic numbers, and meanings of each character in a name, one can gain insight into a person's destiny and personality.
+| 分类 | 主要用途 | 处理方式与重要限制 |
+|---|---|---|
+| PDF 工具 | 合并、拆分、压缩、转换、编辑等 | 多数流程设计为浏览器端运行；具体格式、文件大小和加密文件支持以当前工具为准 |
+| 图片工具 | 转换、裁剪、缩放、旋转、优化、水印等 | 设计为浏览器端运行；实际能力受浏览器、设备内存和编解码器影响 |
+| 开发者工具 | JSON、Base64、UUID、JWT、正则、日期等 | 多数为浏览器交互工具；不得把未经核验的结果直接用于生产或安全敏感场景 |
+| 网站检测 | DNS、TLS、响应头、元数据、技术栈、robots、sitemap 等 | 服务端请求公开网址并生成当时的自动观察；不是渗透测试、合规认证或排名保证 |
+| 传统文化娱乐 | 塔罗、八字、梦境、姓名、梅花易数等 | 输入会发送到应用服务生成内容；没有公认科学依据，不用于高风险决策 |
 
-The system typically covers:
+## 编辑与核验方法
 
-- **Five Elements of the name**: Each character maps to one of the Five Elements (Wood, Fire, Earth, Metal, Water). Analyzing these relationships reveals a person's elemental balance and life tendencies.
-- **Phonetic number**: Each character has an associated phonetic value used together with its elemental attribute to assess energy and character inclinations.
-- **Character meaning**: The individual meaning of each character offers clues about personality, talents, and life direction.
-- **Elemental interactions**: Based on the generating and controlling cycles of the Five Elements, the system identifies harmony or tension within a name and forecasts life trends.
+我们只写可以从当前部署、源代码仓库或上游项目核验的产品事实。发布前核对：
 
-Name Five Lattices can offer guidance on personality, career, relationships, and health — though it is one lens among many and should be treated as reflection, not absolute fate.
+1. 当前页面实际提供的工具与入口；
+2. 浏览器端或服务端处理方式；
+3. 上游项目、部署项目和许可证等来源信息；
+4. 已知限制、风险边界和是否需要账户或额度；
+5. canonical、结构化数据、站点地图与正文是否描述同一个实体。
 
-## Plum Blossom Yi Numbers (梅花易数)
+“免费”“本地处理”“安全”“不限量”等表述只有在当前实现足以支持时才使用，并同时写明适用范围。工具数量是当前目录快照，不代表永久承诺。
 
-Plum Blossom Yi Numbers, also known as Meihua Ke, is an ancient Chinese divination method used to predict outcomes and gain insight into situations. It is grounded in the principles and symbolism of the I Ching, blending mathematical calculation, symbolic meaning, and intuition.
+## 来源与项目关系
 
-The foundation is the Eight Trigrams and sixty-four hexagrams of the I Ching. Each trigram consists of three lines — either solid (yang) or broken (yin) — and the hexagrams arise from all possible pairings of trigrams, each carrying distinct meaning.
+- PDF 工具基于 [BentoPDF](https://github.com/alam00000/bentopdf)，部署项目为 [pdf-tools](https://github.com/xyq043170/pdf-tools)。
+- 图片工具的部署与问题记录见 [sharp-web-tools](https://github.com/xyq043170/sharp-web-tools)。
+- 开发者工具基于 Corentin Thomasset 的 [IT Tools](https://github.com/CorentinTh/it-tools)，部署项目为 [dev-tools](https://github.com/xyq043170/dev-tools)。
+- 网站检测基于 Alicia Sykes 的 [Web-Check](https://github.com/Lissy93/web-check)，部署项目为 [seo-tools-project](https://github.com/xyq043170/seo-tools-project)。
+- 传统文化娱乐工具由独立应用提供；关于页会明确娱乐用途和非科学性质。
 
-A reading begins by casting coins or drawing Plum Blossom lots to obtain a specific hexagram, which is then interpreted through its upper and lower trigrams, line statements, and contextual factors. The system is considered a timeless wisdom that helps people understand change in themselves and the world, providing a framework for reflection and decision-making.
+第三方开源项目的作者身份不等于其为 Smart Tool Matrix 背书。每个子站的可见说明和 \`llms.txt\` 提供更具体的来源与限制。
 
-## Duke Zhou Dream Interpretation (周公解梦)
+## 隐私与安全边界
 
-Duke Zhou Dream Interpretation is an ancient Chinese dream-analysis tradition attributed to Duke Zhou Dan (Ji Dan), a celebrated statesman of the early Western Zhou dynasty. According to legend, he possessed the gift of decoding the symbols and images that appear in dreams.
+“浏览器端处理”描述的是实现方式，不等同于独立安全审计。处理机密、受监管或不可替代的资料前，请核对当前页面的网络行为、保留原始文件并验证输出。网站检测和 AI 辅助功能必须向服务端发起请求。
 
-The method interprets symbols, narrative sequences, and actions within dreams to uncover their meaning, treating dreams as expressions of the mind's inner activity and the unconscious. Different dream content yields different interpretations and forecasts, helping people understand the messages encoded in their dreams.
+## 引用本站时
 
-In ancient China this tradition held broad cultural importance — in politics, officialdom, military affairs, and everyday life. People regularly turned to it for glimpses of the future and answers to inner questions.
+本站适合作为“Smart Tool Matrix 自己收录了什么、如何描述处理方式、与哪些项目有关”的第一方来源。它不应被当作某款产品“最好、最安全、最准确”的独立证据。引用时请使用“Smart Tool Matrix 自述/目录显示”等准确归因。
 
-Note: Dream interpretation is a folk tradition with no scientific basis and should be treated as entertainment and personal reflection only. Dreams are deeply personal; their meaning depends on individual circumstances and lived experience.
+## 责任与联系
 
-## Tarot Cards
+内容责任主体：**Smart Tool Matrix 编辑团队**
 
-Tarot Cards are a divination tool originating in Europe, used for insight into the future, self-exploration, and guidance. A standard deck contains 78 cards, each with a distinct image and symbolic meaning.
-
-Tarot is believed to have originated in 15th-century Italy, initially as a card game. Over time it evolved into a tool for divination and spiritual inquiry, gaining widespread popularity in the late 18th and early 19th centuries.
-
-A standard deck is divided into two parts: the Major Arcana (22 cards, each representing universal themes such as Fate, Strength, and Justice) and the Minor Arcana (56 cards in four suits — Wands, Cups, Swords, and Pentacles — each with ten pip cards and four court cards).
-
-During a reading, the querent draws a set of cards based on their question. Each card carries unique symbolism, and combined with the reader's intuition and experience, the spread can illuminate the past, present, and future, as well as the querent's inner world.
-
-Tarot is not a tool for predicting fixed fate — it offers a mode of reflection and guidance. Readings vary depending on the reader's perspective and intuition. Approach tarot with an open mind, as a prompt for self-inquiry rather than absolute truth.
-
-## Eight Characters of Birth (生辰八字)
-
-The Eight Characters of Birth — also called Ba Zi or Four Pillars of Destiny — is a traditional Chinese fate-calculation system based on the lunar calendar date and time of birth. Eight characters derived from these four pillars (Year, Month, Day, Hour) reveal a person's destiny, character, and fortune.
-
-Each pillar combines a Heavenly Stem (one of ten: Jiǎ, Yǐ, Bǐng, Dīng, Wù, Jǐ, Gēng, Xīn, Rén, Guǐ) and an Earthly Branch (one of twelve, corresponding to the zodiac animals). The Year Pillar, Month Pillar, Day Pillar, and Hour Pillar together form the eight characters.
-
-Once the chart is built, the practitioner analyzes the Five Element composition, yin-yang balance, and interactions among the stems and branches to forecast career trajectory, marriage prospects, health, and other life dimensions.
-
-Ba Zi analysis typically requires professional fate-calculation software, reference texts, or a skilled practitioner. It is a complex discipline demanding deep study and practice for accurate interpretation; professional guidance is recommended for meaningful insight.
+问题、更正、版权或产品反馈：**905501891wang@gmail.com**
 `
 
-export const ABOUT = `# 关于、来源与名词解释
+export const ABOUT_EN = `# About Smart Tool Matrix
 
-> **娱乐用途声明：**塔罗、生辰八字、姓名数理、梦境解析、梅花易数和姻缘测算均没有公认的科学依据。生成内容仅供娱乐和个人反思，不构成医疗、法律、金融、心理或其他专业建议，也不应作为重大决策的唯一依据。
+**Last reviewed: 2026-07-24**
 
-本页介绍的是传统或流行文化中的一般解释，并非已经验证的预测机制。未附一手资料的历史性表述应视为文化背景说明，而非权威学术来源。工具目录的运营、隐私和法律信息见 [Smart Tool Matrix](https://gotoolmatrix.com/about)。
+Smart Tool Matrix is an online-tool directory maintained by the Smart Tool Matrix editorial team. The main site provides categories, entry points, accounts and quotas; separate projects provide the PDF, image, developer, website-inspection and traditional-culture entertainment tools. This is a first-party directory for those deployments, not an independent review publisher.
 
-## 姓名五格
+## What is listed
 
-姓名五格是一种基于姓名的命理学系统, 用于分析和推测个人的性格特点、潜能、运势等。它认为每个汉字都有特定的音、义、形, 通过对姓名中每个字的五行属性、音数、字义等进行综合分析, 来揭示人的命运和性格。
+| Collection | Main tasks | Processing and important limits |
+|---|---|---|
+| PDF | Merge, split, compress, convert and edit | Most workflows are designed for browser execution; format, size and encrypted-file support varies by tool |
+| Image | Convert, crop, resize, rotate, optimize and watermark | Designed for browser execution; practical support depends on the browser, memory and codecs |
+| Developer | JSON, Base64, UUID, JWT, regex and date utilities | Mostly interactive browser tools; verify output before production or security-sensitive use |
+| Website inspection | DNS, TLS, headers, metadata, technology, robots and sitemap observations | A service requests the public URL; results are point-in-time observations, not a penetration test, compliance certificate or ranking guarantee |
+| Traditional-culture entertainment | Tarot, Bazi, dreams, names and Plum Blossom experiences | Inputs are sent to an application service; outputs have no established scientific basis and are not for high-stakes decisions |
 
-姓名五格通常包括以下几个要素：
+## Editorial and verification method
 
-- 姓名的五行属性：每个字都有对应的五行属性（木、火、土、金、水）, 通过分析姓名中每个字的五行属性及其相互关系, 推断个人的五行特征和命理属性。
+We publish product facts that can be checked against the live deployment, deployment repository or upstream project. Before publication we compare the visible tool set, processing location, provenance and license, known limitations, account or quota requirements, and consistency among the body, canonical URL, structured data and sitemap.
 
-- 音数：每个汉字都有对应的音数, 即字的发音。根据姓名中每个字的音数, 结合五行属性进行分析, 推测个人的气场、性格倾向等。
+Claims such as “free,” “local,” “secure,” or “unlimited” are used only where the current implementation supports them and with their scope stated. Tool counts are a current directory snapshot, not a permanent promise.
 
-- 字义：每个汉字都有独特的字义, 即字的含义。通过分析姓名中每个字的字义, 可以了解个人的个性、才能、命运走势等方面的特点。
+## Sources and project relationships
 
-- 五格相生相克：根据五行相生相克的原理, 分析姓名中字的相生相克关系, 推断个人的五行平衡度和命运趋势。
+- PDF tools are based on [BentoPDF](https://github.com/alam00000/bentopdf); deployment source: [pdf-tools](https://github.com/xyq043170/pdf-tools).
+- Image deployment and issue history: [sharp-web-tools](https://github.com/xyq043170/sharp-web-tools).
+- Developer tools are based on Corentin Thomasset's [IT Tools](https://github.com/CorentinTh/it-tools); deployment source: [dev-tools](https://github.com/xyq043170/dev-tools).
+- Website inspection is based on Alicia Sykes's [Web-Check](https://github.com/Lissy93/web-check); deployment source: [seo-tools-project](https://github.com/xyq043170/seo-tools-project).
+- Traditional-culture entertainment is provided by a separate application with an explicit entertainment and non-scientific disclaimer.
 
-基于以上要素, 姓名五格系统可以提供一些关于个人性格、潜能、事业、婚姻、健康等方面的推测和指导。然而, 需要注意的是, 姓名五格只是命理学的一种方法, 它并不能完全决定一个人的命运, 人的成长和发展还受到多种其他因素的影响, 如个人的努力、环境等。因此, 对于姓名五格的解读, 可以作为参考和思考的一部分, 但并不是唯一的决定因素。
+Upstream authors do not thereby endorse Smart Tool Matrix. Each collection's visible page and \`llms.txt\` give more specific provenance and limitations.
 
-## 梅花易数
+## Privacy and safety boundary
 
-梅花易数, 也被称为梅花课, 是中国古代的一种占卜方法, 用于预测未来的情况或获取对事物的洞察。它是基于易经的原理和符号体系, 并结合了数学计算、象征意义和直观感知等元素。
+“Browser-side processing” describes architecture; it is not an independent security audit. Before handling confidential, regulated or irreplaceable material, verify the current page's network behavior, keep the original and inspect the output. Website inspection and AI-assisted features necessarily make server requests.
 
-梅花易数的核心是八卦和六十四卦的应用。八卦是易经中的基本符号, 由三个连续的爻线组成, 每个爻线可以是阳爻（实线）或阴爻（虚线）。六十四卦是由八卦的各种组合形成的, 每个卦象都具有特定的含义和象征。
+## Citation guidance
 
-在梅花易数中, 通过抛掷三枚硬币或使用梅花签等方式, 得到一个具体的卦象, 然后根据卦象的含义和相关的解释进行解读和分析。这包括卦象的上下卦、爻辞、彖象等内容, 以及与个人问题或事物相关联的其他因素。
+This site can support first-party statements about what Smart Tool Matrix lists, its documented processing design and disclosed project relationships. It is not independent evidence that a product is best, secure or accurate. Attribute claims as “Smart Tool Matrix states” or “the directory lists.”
 
-梅花易数被认为是一种超越时间和空间的智慧系统, 可以帮助人们了解自己和周围世界的变化, 并提供一种思考和决策的方法。它在历史上广泛应用于预测、决策、命理等方面, 被视为一种神秘而有用的工具。然而, 解读梅花易数需要一定的学习和实践, 通常由梅花易数的专家或者经验丰富的人来进行。
+## Responsibility and contact
 
-## 周公解梦
+Responsible publisher: **Smart Tool Matrix editorial team**
 
-周公解梦是古代中国的一种解梦方法, 相传源于周公旦（姬旦）, 是西周时期的著名政治家和周朝的创立者之一。根据传说, 周公旦具有解梦的能力, 他能够解读人们在睡梦中所见到的各种象征和意象, 并给予相应的解释和指导。
-
-周公解梦的理论基础是根据梦境中的符号、情节、动作等来推测梦的含义和预示, 认为梦境是人的内心活动和潜意识的表达。根据不同的梦境内容, 周公解梦给出了相应的解释和预测, 帮助人们理解梦境中的信息, 以及对未来的一些暗示。
-
-周公解梦在古代中国的文化中有着重要的地位, 被广泛应用于各个领域, 包括政治、官场、军事、家庭生活等。人们常常通过周公解梦来寻求对未来的预测和指导, 以及对自己内心深处的追求和疑问的解答。
-
-然而, 需要注意的是, 周公解梦属于民间迷信范畴, 其解释和预测并没有科学依据, 仅供娱乐和参考之用。梦境的解读还需要结合个人的具体情境和经历, 不能过分依赖解梦结果对自己的决策和行为产生影响。
-
-## 塔罗牌
-
-塔罗牌（Tarot Cards）是一种起源于欧洲的占卜工具, 常用于预测未来、探索内心和提供指导。它由一副包含78张卡牌的牌组组成, 每张牌都有特定的图案和象征意义。
-
-塔罗牌最早被认为起源于15世纪的意大利, 最初并非用于占卜, 而是用作纸牌游戏。然而, 随着时间的推移, 人们开始将其用于占卜和心灵探索。塔罗牌在18世纪末和19世纪初逐渐流行起来, 成为心灵和神秘主义领域的重要工具。
-
-一副标准的塔罗牌包含两个主要部分：大阿卡纳（Major Arcana）和小阿卡纳（Minor Arcana）。大阿卡纳由22张牌组成, 每张牌都代表着不同的象征和主题, 如命运、力量、正义等。小阿卡纳则包含56张牌, 分为四个花色, 分别是权杖、圣杯、宝剑和金币, 每个花色包含10张数值牌和4张面值牌。
-
-使用塔罗牌进行占卜时, 占卜者通常会根据提问者的问题或者目的, 从牌组中抽取一定数量的牌, 并根据牌面的象征意义进行解读。每张牌都有独特的含义, 结合占卜者的直觉和经验, 可以提供对过去、现在和未来的洞察, 以及对个人内在世界的反思和指导。
-
-需要注意的是, 塔罗牌不是预测命运的工具, 而是提供了一种反思和指导的方式。占卜的结果和解读可以因个人的解读角度、经验和直觉而有所不同。因此, 使用塔罗牌时应持有开放的心态, 将其作为一个工具来启发思考和探索内心世界, 而不是将其作为绝对真理。
-
-## 生辰八字
-
-生辰八字测算是一种中华民族传统的命理学方法, 也称为八字命理或八字算命。它基于农历出生日期和时间, 通过八个字来揭示个人的命运、性格特点和吉凶运势等信息。
-
-八字指的是年、月、日、时四个单位的天干和地支。天干由十个干支（甲、乙、丙、丁、戊、己、庚、辛、壬、癸）组成, 地支由十二个生肖（鼠、牛、虎、兔、龙、蛇、马、羊、猴、鸡、狗、猪）组成。根据出生年份的天干地支, 可以推算出对应的年柱；根据出生月、日、时的天干地支, 可以推算出对应的月柱、日柱和时柱。
-
-生辰八字的过程涉及到天干地支的相应计算和推算方法。一旦生成了八字, 就可以根据八字的组合和相互关系, 结合命理学理论, 进行测算和解读。通过分析八字的五行属性、阴阳平衡、天干地支的相生相克关系等, 可以推断出个人的命运走势、事业发展、婚姻状况、健康状况等方面的特点和趋势。
-
-生辰八字和进行八字测算通常需要借助专业的命理学软件、书籍或请教命理师。同时, 八字测算是一门复杂的学问, 需要深入的学习和实践才能准确解读和理解。因此, 在进行八字测算时, 建议寻求专业人士的指导和解读, 以获取更准确的结果和指导。
+Corrections, copyright and product feedback: **905501891wang@gmail.com**
 `

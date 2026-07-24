@@ -1,7 +1,7 @@
 {
   "app": {
     "title": "智能工具矩阵",
-    "subtitle": "AI 占卜 · PDF · 图片处理 · 开发者工具",
+    "subtitle": "PDF · 图片处理 · 开发者工具 · 网站检测",
     "loading": "工具加载中...",
     "footer": "© {{year}} 智能工具矩阵 · 一站式实用工具"
   },
@@ -13,8 +13,8 @@
     "pricing": "价格方案",
     "settings": "设置",
     "toggleTheme": "切换主题",
-    "about": "关于占卜",
-    "aboutDesc": "了解各种占卜方式的起源与含义",
+    "about": "关于与来源",
+    "aboutDesc": "了解目录的编辑方法、项目来源与使用限制",
     "viewDetails": "查看详情",
     "back": "返回",
     "history": "历史"
@@ -212,14 +212,22 @@
     "noSearchResults": "没有找到相关工具",
     "allCategories": "全部分类",
     "findYourTool": "找到适合你的工具",
-    "categoryHint": "按使用场景浏览，快速完成文件处理、开发检测与趣味测算。",
+    "categoryHint": "按使用场景浏览；每个子站都说明处理方式、项目来源和适用限制。",
     "trustTitle": "简单、快速，安心使用",
     "trust1Title": "浏览器端处理",
     "trust1Desc": "支持本地处理的工具不会上传你的文件。",
     "trust2Title": "即开即用",
     "trust2Desc": "无需安装、无需复杂配置，打开就能用。",
     "trust3Title": "持续维护",
-    "trust3Desc": "围绕真实需求添加工具，持续优化速度与体验。",
-    "whyUs": "为什么选择我们"
+    "trust3Desc": "核对当前功能、来源和限制，重要变更会同步更新说明。",
+    "whyUs": "目录原则",
+    "evidenceLabel": "选择工具前先确认",
+    "evidenceTitle": "处理方式因工具而异",
+    "evidenceIntro": "PDF、图片和多数开发者工具设计为在浏览器中运行；网站检测和 AI 辅助体验会向服务端发送请求。浏览器端处理是架构说明，不等于独立安全审计。",
+    "evidenceBrowserTitle": "浏览器端工具",
+    "evidenceBrowserDesc": "保留原文件并验证输出。格式、文件大小和实际能力受当前页面、浏览器与设备影响。",
+    "evidenceServerTitle": "服务端工具",
+    "evidenceServerDesc": "网站检测是某一时点的自动观察；娱乐型传统文化内容没有公认科学依据，均不用于高风险决策。",
+    "methodLink": "查看完整来源与核验方法"
   }
 }

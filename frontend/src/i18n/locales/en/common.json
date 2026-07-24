@@ -1,7 +1,7 @@
 {
   "app": {
     "title": "Smart Tool Matrix",
-    "subtitle": "AI Readings · PDF · Image · Developer Tools",
+    "subtitle": "PDF · Image · Developer · Website Inspection",
     "loading": "Loading your tools...",
     "footer": "© {{year}} Smart Tool Matrix · Practical tools in one place"
   },
@@ -13,8 +13,8 @@
     "pricing": "Pricing",
     "settings": "Settings",
     "toggleTheme": "Toggle Theme",
-    "about": "About Divination",
-    "aboutDesc": "Learn about the origins and meanings of various divination methods",
+    "about": "About & Sources",
+    "aboutDesc": "Read the directory method, project provenance and limitations",
     "viewDetails": "View Details",
     "back": "Back",
     "history": "History"
@@ -212,14 +212,22 @@
     "noSearchResults": "No matching tools found",
     "allCategories": "All categories",
     "findYourTool": "Find the right tool for the job",
-    "categoryHint": "Browse by use case to handle files, run developer checks, or explore fun readings.",
+    "categoryHint": "Browse by use case; each collection documents its processing design, provenance and limits.",
     "trustTitle": "Simple, fast, and safe to use",
     "trust1Title": "Browser-side processing",
     "trust1Desc": "Tools that support local processing keep your files on your device.",
     "trust2Title": "Ready when you are",
     "trust2Desc": "No installation, no sign-up, no complicated setup.",
     "trust3Title": "Actively maintained",
-    "trust3Desc": "We add tools around real needs and keep improving speed and experience.",
-    "whyUs": "Why this toolbox"
+    "trust3Desc": "We check current features, provenance and limitations and update material changes.",
+    "whyUs": "Directory principles",
+    "evidenceLabel": "Check before use",
+    "evidenceTitle": "Processing differs by collection",
+    "evidenceIntro": "PDF, image and most developer tools are designed for browser execution; website inspection and AI-assisted experiences send service requests. Browser-side processing describes architecture, not an independent security audit.",
+    "evidenceBrowserTitle": "Browser-side tools",
+    "evidenceBrowserDesc": "Keep originals and verify output. Formats, file sizes and practical capability depend on the active page, browser and device.",
+    "evidenceServerTitle": "Service-side tools",
+    "evidenceServerDesc": "Website checks are point-in-time automated observations. Traditional-culture entertainment has no established scientific basis. Neither should drive high-stakes decisions.",
+    "methodLink": "Read the full sources and verification method"
   }
 }

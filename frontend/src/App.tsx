@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Toaster } from '@/components/ui/sonner'
 import { useGlobalState } from '@/store'
@@ -28,6 +28,7 @@ function App() {
     settings
   } = useGlobalState()
   const { t, i18n } = useTranslation('common')
+  const location = useLocation()
 
   const [loading, setLoading] = useState(false)
 
@@ -67,9 +68,20 @@ function App() {
   }, [jwt])
 
   useEffect(() => {
-    document.title = `${t('app.title')} - ${t('app.subtitle')}`
+    const isAbout = location.pathname === '/about'
+    document.title = isAbout
+      ? `${t('nav.about')} | ${t('app.title')}`
+      : `${t('app.title')} - ${t('app.subtitle')}`
     document.documentElement.lang = i18n.language?.startsWith('zh') ? 'zh-CN' : 'en'
-  }, [t, i18n.language])
+    const description = document.querySelector<HTMLMetaElement>('meta[name="description"]')
+    if (description) {
+      description.content = isAbout
+        ? t('nav.aboutDesc')
+        : t('market.categoryHint')
+    }
+    const canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]')
+    if (canonical) canonical.href = `https://gotoolmatrix.com${isAbout ? '/about' : '/'}`
+  }, [t, i18n.language, location.pathname])
 
   return (
     <>

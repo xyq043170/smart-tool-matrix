@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { ArrowRight, CheckCircle2, Search, ShieldCheck, Sparkles, Zap } from 'lucide-react'
+import { ArrowRight, CheckCircle2, ExternalLink, MonitorSmartphone, Search, Server, ShieldCheck, Sparkles, Zap } from 'lucide-react'
 import { getToolsByCategory, Tool } from '@/config/tools'
 import { useGlobalState } from '@/store'
 import { toast } from 'sonner'
@@ -207,6 +207,34 @@ export default function MarketPage() {
               </button>
             )
           })}
+        </div>
+      </section>
+
+      <section className="shell py-14 md:py-20" aria-labelledby="processing-title">
+        <div className="rounded-3xl border border-border bg-card p-7 shadow-[0_8px_30px_hsl(var(--shadow-soft))] md:p-10">
+          <p className="text-xs font-bold uppercase tracking-[0.16em] text-primary">{tc('market.evidenceLabel')}</p>
+          <h2 id="processing-title" className="mt-2 text-2xl font-bold tracking-tight md:text-3xl">
+            {tc('market.evidenceTitle')}
+          </h2>
+          <p className="mt-4 max-w-4xl text-sm leading-7 text-muted-foreground md:text-base">
+            {tc('market.evidenceIntro')}
+          </p>
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
+            <article className="rounded-2xl bg-muted/60 p-6">
+              <MonitorSmartphone className="h-5 w-5 text-primary" aria-hidden="true" />
+              <h3 className="mt-4 font-bold">{tc('market.evidenceBrowserTitle')}</h3>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">{tc('market.evidenceBrowserDesc')}</p>
+            </article>
+            <article className="rounded-2xl bg-muted/60 p-6">
+              <Server className="h-5 w-5 text-primary" aria-hidden="true" />
+              <h3 className="mt-4 font-bold">{tc('market.evidenceServerTitle')}</h3>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">{tc('market.evidenceServerDesc')}</p>
+            </article>
+          </div>
+          <button onClick={() => navigate('/about')} className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-primary hover:underline">
+            {tc('market.methodLink')}
+            <ExternalLink className="h-4 w-4" aria-hidden="true" />
+          </button>
         </div>
       </section>
 

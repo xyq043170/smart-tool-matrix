@@ -236,6 +236,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
                                 </div>
                                 <div className="flex flex-col gap-2">
                                     <strong className="text-xs uppercase tracking-widest opacity-50">{t('nav.more') || '更多'}</strong>
+                                    <Link to="/about" className="opacity-70 hover:opacity-100">{t('nav.about')}</Link>
                                     <Link to="/subscription" className="opacity-70 hover:opacity-100">{t('nav.pricing')}</Link>
                                     <Link to="/auth/login" className="opacity-70 hover:opacity-100">{t('nav.login')}</Link>
                                 </div>
