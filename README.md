@@ -46,7 +46,13 @@ VITE_API_BASE=
 VITE_DIVINATION_TOOLS_URL=http://localhost:5174/
 ```
 
-生产环境将 `VITE_DIVINATION_TOOLS_URL` 设置为独立命理站的正式地址。
+生产构建默认使用命理工具子域名：
+
+```env
+VITE_DIVINATION_TOOLS_URL=https://divination.gotoolmatrix.com/
+```
+
+该子域名需要在 Vercel 的 `ai-divination-tools` 项目中完成域名绑定。
 
 ## 构建
 
