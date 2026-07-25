@@ -11,6 +11,10 @@
     ],
     "routes": [
         {
+            "src": "/api/divination",
+            "dest": "https://ai-divination-tools.vercel.app/api/divination"
+        },
+        {
             "src": "/api/(.*)",
             "dest": "main.py"
         },
@@ -21,6 +25,14 @@
         {
             "src": "/openapi.json",
             "dest": "main.py"
+        },
+        {
+            "src": "/divination",
+            "dest": "https://ai-divination-tools.vercel.app/divination"
+        },
+        {
+            "src": "/divination/(.*)",
+            "dest": "https://ai-divination-tools.vercel.app/divination/$1"
         },
         {
             "src": "/pdf",

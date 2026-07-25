@@ -43,11 +43,11 @@ pnpm dev
 
 ```env
 VITE_API_BASE=
-VITE_DIVINATION_TOOLS_URL=http://localhost:5174/
+VITE_DIVINATION_TOOLS_URL=http://localhost:5174/divination/
 ```
 
-生产构建固定跳转到 `https://divination.gotoolmatrix.com/`，避免部署平台中的旧环境变量覆盖正式入口。
-该子域名需要在 Vercel 的 `ai-divination-tools` 项目中完成域名绑定。
+生产构建默认通过主站路径 `/divination/` 访问命理工具，由 Vercel 转发到独立的
+`ai-divination-tools` 项目。
 
 ## 构建
 

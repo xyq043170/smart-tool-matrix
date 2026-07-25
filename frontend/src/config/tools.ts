@@ -4,8 +4,8 @@ import {
 } from 'lucide-react'
 
 const DIVINATION_TOOLS_URL = import.meta.env.DEV
-  ? import.meta.env.VITE_DIVINATION_TOOLS_URL || 'http://localhost:5174/'
-  : 'https://divination.gotoolmatrix.com/'
+  ? import.meta.env.VITE_DIVINATION_TOOLS_URL || 'http://localhost:5174/divination/'
+  : '/divination/'
 
 export interface Tool {
   id: string
