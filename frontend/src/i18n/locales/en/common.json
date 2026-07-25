@@ -237,6 +237,17 @@
     "evidenceBrowserDesc": "Keep originals and verify output. Formats, file sizes and practical capability depend on the active page, browser and device.",
     "evidenceServerTitle": "Service-side tools",
     "evidenceServerDesc": "Website checks are point-in-time automated observations. Traditional-culture entertainment has no established scientific basis. Neither should drive high-stakes decisions.",
-    "methodLink": "Read the full sources and verification method"
+    "methodLink": "Read the full sources and verification method",
+    "guidesLabel": "Answer-ready guidance",
+    "guidesTitle": "Steps, parameters and common questions",
+    "guidesDesc": "Guides are checked against the current deployment and source code, with explicit use cases, parameter tradeoffs, quotas and non-guarantees.",
+    "mergeGuideTitle": "Free online PDF merging guide",
+    "mergeGuideDesc": "File order, page ranges, bookmarks, quality effects and browser-processing limits.",
+    "imageGuideTitle": "Compress images while preserving quality",
+    "imageGuideDesc": "JPEG, WebP and PNG quality settings, and the boundary of genuinely lossless compression.",
+    "entertainmentTitle": "Entertainment (separate section)",
+    "entertainmentDesc": "Traditional-culture experiences are separated from productivity tools. Outputs have no established scientific basis and are not for high-stakes decisions.",
+    "entertainmentLink": "Open entertainment tools",
+    "productivityTools": "Productivity tools"
   }
 }

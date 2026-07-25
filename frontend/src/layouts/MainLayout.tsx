@@ -23,6 +23,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
     const { t } = useTranslation('common')
     const { t: tt, i18n } = useTranslation('tools')
     const categories = getToolsByCategory()
+    const productivityCategories = categories.filter(category => category.key !== 'divination')
     const [navLoading, setNavLoading] = useState<string | null>(null)
 
     const API_BASE = import.meta.env.VITE_API_BASE || ''
@@ -118,7 +119,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
                     {/* Main Nav - desktop */}
                     {!isIframeTool && (
                         <nav className="hidden md:flex items-center gap-[26px] text-[14px] text-muted-foreground">
-                            {categories.map((cat) => {
+                            {productivityCategories.map((cat) => {
                                 if (cat.tools.length === 1) {
                                     const tool = cat.tools[0]
                                     return (
@@ -235,9 +236,9 @@ export default function MainLayout({ children }: MainLayoutProps) {
                             </div>
                             <div className="grid grid-cols-2 gap-6 text-sm">
                                 <div className="flex flex-col gap-2">
-                                    <strong className="text-xs uppercase tracking-widest opacity-50">{tt('category.divination') || '命理'}</strong>
-                                    {categories.slice(0, 1).flatMap(c => c.tools.slice(0, 3)).map(tool => (
-                                        <span key={tool.id} className="opacity-70">{tt(`${tool.id}.name`)}</span>
+                                    <strong className="text-xs uppercase tracking-widest opacity-50">{t('market.productivityTools')}</strong>
+                                    {productivityCategories.map(category => category.tools[0]).map(tool => (
+                                        <a key={tool.id} href={tool.route} className="opacity-70 hover:opacity-100">{tt(`${tool.id}.name`)}</a>
                                     ))}
                                 </div>
                                 <div className="flex flex-col gap-2">

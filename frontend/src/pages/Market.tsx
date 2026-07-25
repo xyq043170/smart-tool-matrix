@@ -16,6 +16,8 @@ export default function MarketPage() {
   const [openingToolId, setOpeningToolId] = useState<string | null>(null)
   const [searchQuery, setSearchQuery] = useState('')
   const categories = getToolsByCategory()
+  const productivityCategories = categories.filter(category => category.key !== 'divination')
+  const entertainmentCategory = categories.find(category => category.key === 'divination')
 
   const handleToolClick = async (tool: Tool) => {
     if (tool.type === 'internal' && tool.route) {
@@ -171,7 +173,7 @@ export default function MarketPage() {
         </div>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-          {categories.map((category) => {
+          {productivityCategories.map((category) => {
             const tool = category.tools[0]
             const Icon = tool.icon
             const count = tool.subToolCount || category.tools.length
@@ -212,6 +214,36 @@ export default function MarketPage() {
           })}
         </div>
       </section>
+
+      <section className="shell pb-14 md:pb-20" aria-labelledby="guides-title">
+        <div className="rounded-3xl border border-border bg-card p-7 md:p-10">
+          <p className="text-xs font-bold uppercase tracking-[0.16em] text-primary">{tc('market.guidesLabel')}</p>
+          <h2 id="guides-title" className="mt-2 text-2xl font-bold tracking-tight md:text-3xl">{tc('market.guidesTitle')}</h2>
+          <p className="mt-3 max-w-3xl text-sm leading-7 text-muted-foreground">{tc('market.guidesDesc')}</p>
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            <a href="/guides/merge-pdf.html" className="rounded-2xl bg-muted/60 p-5 transition hover:bg-muted">
+              <h3 className="font-bold">{tc('market.mergeGuideTitle')}</h3>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">{tc('market.mergeGuideDesc')}</p>
+            </a>
+            <a href="/guides/compress-image.html" className="rounded-2xl bg-muted/60 p-5 transition hover:bg-muted">
+              <h3 className="font-bold">{tc('market.imageGuideTitle')}</h3>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">{tc('market.imageGuideDesc')}</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {entertainmentCategory && (
+        <section className="shell pb-14 md:pb-20" aria-labelledby="entertainment-title">
+          <div className="rounded-2xl border border-dashed border-border p-6">
+            <h2 id="entertainment-title" className="font-bold">{tc('market.entertainmentTitle')}</h2>
+            <p className="mt-2 text-sm leading-6 text-muted-foreground">{tc('market.entertainmentDesc')}</p>
+            <a href={entertainmentCategory.tools[0].route} className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline">
+              {tc('market.entertainmentLink')} <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
+        </section>
+      )}
 
       <section className="shell py-14 md:py-20" aria-labelledby="processing-title">
         <div className="rounded-3xl border border-border bg-card p-7 shadow-[0_8px_30px_hsl(var(--shadow-soft))] md:p-10">

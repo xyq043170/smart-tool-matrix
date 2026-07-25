@@ -33,6 +33,7 @@ const content = {
       title: '更新日志',
       updated: '目录内容与政策的可核验变更记录',
       sections: [
+        ['2026-07-25 · 可抓取指南与主题分区', '在原始 HTML 中加入生产力工具目录快照；发布 PDF 合并与图片压缩静态指南，包含步骤、参数、FAQ、来源及结构化数据；将传统文化娱乐入口移出生产力工具主目录。'],
         ['2026-07-25 · SEO 与可信度改进', '补全核心分类、隐私政策、服务条款和更新日志的 sitemap 条目；将分类入口改为可抓取链接；增加逐页 canonical、描述和社交分享元数据；补充隐私、支付、退款与安全边界说明。'],
         ['2026-07-24 · 来源与编辑方法', '发布 About 与 llms.txt，披露 BentoPDF、sharp-web-tools、IT Tools 和 Web-Check 等项目关系，并明确第一方目录、浏览器端处理和非独立安全审计的边界。'],
       ],
@@ -67,6 +68,7 @@ const content = {
       title: 'Changelog',
       updated: 'Verifiable directory, content and policy changes',
       sections: [
+        ['2026-07-25 · Crawlable guides and topic separation', 'Added a productivity-directory snapshot to the raw HTML; published static PDF-merging and image-compression guides with steps, parameters, FAQs, sources and structured data; moved traditional-culture entertainment out of the primary productivity directory.'],
         ['2026-07-25 · SEO and trust improvements', 'Added sitemap entries for core collections, privacy, terms and changelog; changed category entry points into crawlable links; added page-specific canonical, description and social metadata; documented privacy, payment, refund and security boundaries.'],
         ['2026-07-24 · Sources and editorial method', 'Published About and llms.txt, disclosed relationships to BentoPDF, sharp-web-tools, IT Tools and Web-Check, and clarified the first-party directory, browser-processing and non-audit boundaries.'],
       ],

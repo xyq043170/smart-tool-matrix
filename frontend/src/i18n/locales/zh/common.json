@@ -237,6 +237,17 @@
     "evidenceBrowserDesc": "保留原文件并验证输出。格式、文件大小和实际能力受当前页面、浏览器与设备影响。",
     "evidenceServerTitle": "服务端工具",
     "evidenceServerDesc": "网站检测是某一时点的自动观察；娱乐型传统文化内容没有公认科学依据，均不用于高风险决策。",
-    "methodLink": "查看完整来源与核验方法"
+    "methodLink": "查看完整来源与核验方法",
+    "guidesLabel": "可直接引用的操作内容",
+    "guidesTitle": "步骤、参数与常见问题",
+    "guidesDesc": "指南基于当前部署界面和源代码核对，明确说明适用场景、参数取舍、免费额度与不能保证的结果。",
+    "mergeGuideTitle": "免费在线合并 PDF 指南",
+    "mergeGuideDesc": "文件排序、指定页码、书签与质量影响，以及浏览器端处理限制。",
+    "imageGuideTitle": "在线压缩图片且尽量保真",
+    "imageGuideDesc": "解释 JPEG、WebP、PNG 的质量参数与真正无损压缩的边界。",
+    "entertainmentTitle": "娱乐内容（独立分区）",
+    "entertainmentDesc": "塔罗、八字等传统文化体验与生产力工具分开呈现；输出没有公认科学依据，不用于高风险决策。",
+    "entertainmentLink": "进入娱乐工具",
+    "productivityTools": "生产力工具"
   }
 }

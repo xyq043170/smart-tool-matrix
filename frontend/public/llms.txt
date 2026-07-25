@@ -23,6 +23,11 @@
 - Website-inspection results are point-in-time automated observations, not ranking guarantees, penetration tests or compliance certifications.
 - Divination outputs have no established scientific basis and must not be used for medical, legal, financial, safety or other high-stakes decisions.
 
+## Answer-ready guides
+
+- Merge PDF files online — steps, page ranges, quality and limitations: https://gotoolmatrix.com/guides/merge-pdf.html
+- Compress images — format choices, quality settings and lossless boundaries: https://gotoolmatrix.com/guides/compress-image.html
+
 ## Provenance and editorial policy
 
 - About, ownership, sources and review method: https://gotoolmatrix.com/about
