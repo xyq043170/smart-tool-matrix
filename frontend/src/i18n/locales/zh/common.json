@@ -19,6 +19,15 @@
     "back": "返回",
     "history": "历史"
   },
+  "legal": {
+    "privacy": "隐私政策",
+    "privacyDesc": "了解 Smart Tool Matrix 如何处理账户、额度、支付、日志和不同工具的输入。",
+    "terms": "服务条款",
+    "termsDesc": "了解工具使用规则、付费通行证、退款处理、结果限制和责任边界。",
+    "changelog": "更新日志",
+    "changelogDesc": "查看 Smart Tool Matrix 目录、来源说明、政策和技术 SEO 的日期化变更。",
+    "pricingDesc": "查看每日免费额度，以及一次性或自动续费通行证的价格、期限和权益。"
+  },
   "feedback": {
     "button": "客户反馈",
     "title": "告诉我们您的想法",
@@ -213,13 +222,13 @@
     "allCategories": "全部分类",
     "findYourTool": "找到适合你的工具",
     "categoryHint": "按使用场景浏览；每个子站都说明处理方式、项目来源和适用限制。",
-    "trustTitle": "简单、快速，安心使用",
+    "trustTitle": "范围清楚，使用前可核对",
     "trust1Title": "浏览器端处理",
-    "trust1Desc": "支持本地处理的工具不会上传你的文件。",
+    "trust1Desc": "支持本地处理的流程设计为在设备中运行；具体以当前工具说明和网络行为为准。",
     "trust2Title": "即开即用",
-    "trust2Desc": "无需安装、无需复杂配置，打开就能用。",
+    "trust2Desc": "无需安装；访客每天有页面显示的免费额度，超出后可选择付费通行证。",
     "trust3Title": "持续维护",
-    "trust3Desc": "核对当前功能、来源和限制，重要变更会同步更新说明。",
+    "trust3Desc": "核对当前功能、来源和限制；可在公开更新日志中查看重要说明变更。",
     "whyUs": "目录原则",
     "evidenceLabel": "选择工具前先确认",
     "evidenceTitle": "处理方式因工具而异",

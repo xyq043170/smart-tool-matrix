@@ -1,6 +1,6 @@
 export const ABOUT = `# 关于 Smart Tool Matrix
 
-**最后核对：2026-07-24**
+**最后核对：2026-07-25**
 
 Smart Tool Matrix（智能工具矩阵）是由 Smart Tool Matrix 编辑团队维护的在线工具目录。主站负责分类、入口、账户与额度；PDF、图片、开发者、网站检测和传统文化娱乐工具由不同的子项目提供。本站是这些部署的第一方目录，不自称独立评测媒体。
 
@@ -53,7 +53,7 @@ Smart Tool Matrix（智能工具矩阵）是由 Smart Tool Matrix 编辑团队�
 
 export const ABOUT_EN = `# About Smart Tool Matrix
 
-**Last reviewed: 2026-07-24**
+**Last reviewed: 2026-07-25**
 
 Smart Tool Matrix is an online-tool directory maintained by the Smart Tool Matrix editorial team. The main site provides categories, entry points, accounts and quotas; separate projects provide the PDF, image, developer, website-inspection and traditional-culture entertainment tools. This is a first-party directory for those deployments, not an independent review publisher.
 

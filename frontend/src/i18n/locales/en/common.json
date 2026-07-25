@@ -19,6 +19,15 @@
     "back": "Back",
     "history": "History"
   },
+  "legal": {
+    "privacy": "Privacy",
+    "privacyDesc": "Learn how Smart Tool Matrix handles accounts, quotas, payment, logs and inputs across tool collections.",
+    "terms": "Terms",
+    "termsDesc": "Review acceptable use, access passes, refund handling, result limitations and liability boundaries.",
+    "changelog": "Changelog",
+    "changelogDesc": "See dated changes to the Smart Tool Matrix directory, source disclosures, policies and technical SEO.",
+    "pricingDesc": "See the daily free quota and the prices, durations and benefits of one-time or renewing access passes."
+  },
   "feedback": {
     "button": "Feedback",
     "title": "Tell us what you think",
@@ -213,13 +222,13 @@
     "allCategories": "All categories",
     "findYourTool": "Find the right tool for the job",
     "categoryHint": "Browse by use case; each collection documents its processing design, provenance and limits.",
-    "trustTitle": "Simple, fast, and safe to use",
+    "trustTitle": "Clear scope you can check before use",
     "trust1Title": "Browser-side processing",
-    "trust1Desc": "Tools that support local processing keep your files on your device.",
+    "trust1Desc": "Local-capable workflows are designed to run on the device; verify the active tool disclosure and network behavior.",
     "trust2Title": "Ready when you are",
-    "trust2Desc": "No installation, no sign-up, no complicated setup.",
+    "trust2Desc": "No installation is required. Guests receive the free daily quota shown on the page; paid passes are optional.",
     "trust3Title": "Actively maintained",
-    "trust3Desc": "We check current features, provenance and limitations and update material changes.",
+    "trust3Desc": "We check current features, provenance and limitations; material disclosure changes appear in the public changelog.",
     "whyUs": "Directory principles",
     "evidenceLabel": "Check before use",
     "evidenceTitle": "Processing differs by collection",

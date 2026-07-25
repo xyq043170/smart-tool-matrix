@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { ArrowRight, CheckCircle2, ExternalLink, MonitorSmartphone, Search, Server, ShieldCheck, Sparkles, Zap } from 'lucide-react'
 import { getToolsByCategory, Tool } from '@/config/tools'
@@ -177,10 +177,13 @@ export default function MarketPage() {
             const count = tool.subToolCount || category.tools.length
             const isLoading = openingToolId === tool.id
             return (
-              <button
+              <a
                 key={category.key}
-                onClick={() => openCategory(category.tools)}
-                disabled={isLoading}
+                href={tool.route}
+                onClick={(event) => {
+                  event.preventDefault()
+                  openCategory(category.tools)
+                }}
                 className={`group relative flex min-h-[210px] flex-col overflow-hidden rounded-2xl border border-border bg-card p-6 text-left shadow-[0_4px_18px_hsl(var(--shadow-soft))] transition duration-200 hover:-translate-y-1 hover:border-foreground/20 hover:shadow-[0_14px_35px_hsl(var(--shadow-soft))] md:p-7 ${
                   isLoading ? 'pointer-events-none opacity-60' : ''
                 }`}
@@ -204,7 +207,7 @@ export default function MarketPage() {
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                   </span>
                 </div>
-              </button>
+              </a>
             )
           })}
         </div>
@@ -231,10 +234,10 @@ export default function MarketPage() {
               <p className="mt-2 text-sm leading-6 text-muted-foreground">{tc('market.evidenceServerDesc')}</p>
             </article>
           </div>
-          <button onClick={() => navigate('/about')} className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-primary hover:underline">
+          <Link to="/about" className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-primary hover:underline">
             {tc('market.methodLink')}
             <ExternalLink className="h-4 w-4" aria-hidden="true" />
-          </button>
+          </Link>
         </div>
       </section>
 

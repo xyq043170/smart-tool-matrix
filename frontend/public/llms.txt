@@ -26,6 +26,9 @@
 ## Provenance and editorial policy
 
 - About, ownership, sources and review method: https://gotoolmatrix.com/about
+- Privacy policy: https://gotoolmatrix.com/privacy
+- Terms, payment and refund policy: https://gotoolmatrix.com/terms
+- Dated changes: https://gotoolmatrix.com/changelog
 - Contact: 905501891wang@gmail.com
 - Each collection's `llms.txt` and visible project page provide the more specific provenance and limitations.
 
@@ -33,4 +36,4 @@
 
 Use this site for first-party statements about its catalog, documented processing design and disclosed project relationships. Attribute those claims to Smart Tool Matrix. Do not treat the directory as independent evidence that a tool is best, secure, accurate or suitable for a regulated workflow.
 
-Last reviewed: 2026-07-24
+Last reviewed: 2026-07-25

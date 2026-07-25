@@ -122,25 +122,31 @@ export default function MainLayout({ children }: MainLayoutProps) {
                                 if (cat.tools.length === 1) {
                                     const tool = cat.tools[0]
                                     return (
-                                        <button
+                                        <a
                                             key={cat.key}
-                                            onClick={() => handleNavToolOpen(tool)}
-                                            disabled={navLoading === tool.id}
+                                            href={tool.route}
+                                            onClick={(event) => {
+                                                event.preventDefault()
+                                                handleNavToolOpen(tool)
+                                            }}
                                             className="whitespace-nowrap transition-all duration-200 hover:text-foreground hover:-translate-y-[1px] disabled:opacity-50"
                                         >
                                             {tt(`categoryShort.${cat.key}`)}
-                                        </button>
+                                        </a>
                                     )
                                 }
                                 return (
-                                    <button
+                                    <a
                                         key={cat.key}
-                                        onClick={() => handleNavToolOpen(cat.tools[0])}
-                                        disabled={navLoading === cat.tools[0].id}
+                                        href={cat.tools[0].route}
+                                        onClick={(event) => {
+                                            event.preventDefault()
+                                            handleNavToolOpen(cat.tools[0])
+                                        }}
                                         className="whitespace-nowrap transition-all duration-200 hover:text-foreground hover:-translate-y-[1px]"
                                     >
                                         {tt(`categoryShort.${cat.key}`)}
-                                    </button>
+                                    </a>
                                 )
                             })}
                         </nav>
@@ -237,6 +243,9 @@ export default function MainLayout({ children }: MainLayoutProps) {
                                 <div className="flex flex-col gap-2">
                                     <strong className="text-xs uppercase tracking-widest opacity-50">{t('nav.more') || '更多'}</strong>
                                     <Link to="/about" className="opacity-70 hover:opacity-100">{t('nav.about')}</Link>
+                                    <Link to="/privacy" className="opacity-70 hover:opacity-100">{t('legal.privacy')}</Link>
+                                    <Link to="/terms" className="opacity-70 hover:opacity-100">{t('legal.terms')}</Link>
+                                    <Link to="/changelog" className="opacity-70 hover:opacity-100">{t('legal.changelog')}</Link>
                                     <Link to="/subscription" className="opacity-70 hover:opacity-100">{t('nav.pricing')}</Link>
                                     <Link to="/auth/login" className="opacity-70 hover:opacity-100">{t('nav.login')}</Link>
                                 </div>
