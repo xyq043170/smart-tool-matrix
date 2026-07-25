@@ -1,79 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://gotoolmatrix.com/</loc>
+    <loc>https://www.gotoolmatrix.com/</loc>
     <lastmod>2026-07-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://gotoolmatrix.com/about</loc>
+    <loc>https://www.gotoolmatrix.com/about</loc>
     <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gotoolmatrix.com/pdf/</loc>
+    <loc>https://www.gotoolmatrix.com/pdf/</loc>
     <lastmod>2026-07-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://gotoolmatrix.com/image/</loc>
+    <loc>https://www.gotoolmatrix.com/image/</loc>
     <lastmod>2026-07-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://gotoolmatrix.com/developer/</loc>
+    <loc>https://www.gotoolmatrix.com/developer/</loc>
     <lastmod>2026-07-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://gotoolmatrix.com/seo/</loc>
+    <loc>https://www.gotoolmatrix.com/seo/</loc>
     <lastmod>2026-07-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gotoolmatrix.com/subscription</loc>
+    <loc>https://www.gotoolmatrix.com/subscription</loc>
     <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://gotoolmatrix.com/privacy</loc>
+    <loc>https://www.gotoolmatrix.com/privacy</loc>
     <lastmod>2026-07-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://gotoolmatrix.com/terms</loc>
+    <loc>https://www.gotoolmatrix.com/terms</loc>
     <lastmod>2026-07-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://gotoolmatrix.com/changelog</loc>
+    <loc>https://www.gotoolmatrix.com/changelog</loc>
     <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://gotoolmatrix.com/guides/merge-pdf.html</loc>
+    <loc>https://www.gotoolmatrix.com/guides/merge-pdf.html</loc>
     <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gotoolmatrix.com/guides/compress-image.html</loc>
+    <loc>https://www.gotoolmatrix.com/guides/compress-pdf.html</loc>
     <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gotoolmatrix.com/website-inspection</loc>
+    <loc>https://www.gotoolmatrix.com/guides/compress-image.html</loc>
+    <lastmod>2026-07-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gotoolmatrix.com/website-inspection</loc>
     <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

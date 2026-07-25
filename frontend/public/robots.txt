@@ -5,4 +5,4 @@ Disallow: /api/
 Disallow: /auth/
 Disallow: /account
 
-Sitemap: https://gotoolmatrix.com/sitemap.xml
+Sitemap: https://www.gotoolmatrix.com/sitemap.xml

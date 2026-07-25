@@ -243,6 +243,8 @@
     "guidesDesc": "Guides are checked against the current deployment and source code, with explicit use cases, parameter tradeoffs, quotas and non-guarantees.",
     "mergeGuideTitle": "Free online PDF merging guide",
     "mergeGuideDesc": "File order, page ranges, bookmarks, quality effects and browser-processing limits.",
+    "compressPdfGuideTitle": "Free online PDF compression guide",
+    "compressPdfGuideDesc": "Compare Condense and Photon, four compression levels, DPI, image quality and text selectability.",
     "imageGuideTitle": "Compress images while preserving quality",
     "imageGuideDesc": "JPEG, WebP and PNG quality settings, and the boundary of genuinely lossless compression.",
     "entertainmentTitle": "Entertainment (separate section)",

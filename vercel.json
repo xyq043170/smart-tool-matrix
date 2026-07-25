@@ -67,6 +67,10 @@
             "dest": "/frontend/website-inspection.html"
         },
         {
+            "src": "/about",
+            "dest": "/frontend/about.html"
+        },
+        {
             "src": "/seo/(.*)",
             "dest": "https://seo-tools-project.onrender.com/check/$1"
         },

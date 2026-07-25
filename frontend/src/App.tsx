@@ -89,13 +89,13 @@ function App() {
       description.content = meta.description
     }
     const canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]')
-    if (canonical) canonical.href = `https://gotoolmatrix.com${location.pathname === '/' ? '/' : location.pathname}`
+    if (canonical) canonical.href = `https://www.gotoolmatrix.com${location.pathname === '/' ? '/' : location.pathname}`
     const robots = document.querySelector<HTMLMetaElement>('meta[name="robots"]')
     if (robots) robots.content = meta.noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1'
     document.querySelectorAll<HTMLMetaElement>('meta[property="og:title"], meta[name="twitter:title"]').forEach(el => { el.content = meta.title })
     document.querySelectorAll<HTMLMetaElement>('meta[property="og:description"], meta[name="twitter:description"]').forEach(el => { el.content = meta.description })
     const ogUrl = document.querySelector<HTMLMetaElement>('meta[property="og:url"]')
-    if (ogUrl) ogUrl.content = `https://gotoolmatrix.com${location.pathname === '/' ? '/' : location.pathname}`
+    if (ogUrl) ogUrl.content = `https://www.gotoolmatrix.com${location.pathname === '/' ? '/' : location.pathname}`
   }, [t, i18n.language, location.pathname])
 
   return (

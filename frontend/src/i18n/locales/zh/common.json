@@ -243,6 +243,8 @@
     "guidesDesc": "指南基于当前部署界面和源代码核对，明确说明适用场景、参数取舍、免费额度与不能保证的结果。",
     "mergeGuideTitle": "免费在线合并 PDF 指南",
     "mergeGuideDesc": "文件排序、指定页码、书签与质量影响，以及浏览器端处理限制。",
+    "compressPdfGuideTitle": "免费在线压缩 PDF 指南",
+    "compressPdfGuideDesc": "比较 Condense 与 Photon、四档压缩级别、DPI、图片质量及文本可选性。",
     "imageGuideTitle": "在线压缩图片且尽量保真",
     "imageGuideDesc": "解释 JPEG、WebP、PNG 的质量参数与真正无损压缩的边界。",
     "entertainmentTitle": "娱乐内容（独立分区）",

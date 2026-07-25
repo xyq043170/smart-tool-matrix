@@ -1,6 +1,6 @@
 # Smart Tool Matrix
 
-> A maintained directory of practical web tools at https://gotoolmatrix.com/.
+> A maintained directory of practical web tools at https://www.gotoolmatrix.com/.
 
 ## What this site is
 
@@ -10,12 +10,12 @@
 
 ## Tool collections
 
-- PDF tools: https://gotoolmatrix.com/pdf/
-- Image tools: https://gotoolmatrix.com/image/
-- Developer tools: https://gotoolmatrix.com/developer/
-- Website inspection: https://gotoolmatrix.com/seo/
+- PDF tools: https://www.gotoolmatrix.com/pdf/
+- Image tools: https://www.gotoolmatrix.com/image/
+- Developer tools: https://www.gotoolmatrix.com/developer/
+- Website inspection: https://www.gotoolmatrix.com/seo/
 - Traditional-culture entertainment: https://divination.gotoolmatrix.com/
-- Website-inspection explainer and check coverage: https://gotoolmatrix.com/website-inspection
+- Website-inspection explainer and check coverage: https://www.gotoolmatrix.com/website-inspection
 
 ## Quotas and prices
 
@@ -33,15 +33,16 @@
 
 ## Answer-ready guides
 
-- Merge PDF files online — steps, page ranges, quality and limitations: https://gotoolmatrix.com/guides/merge-pdf.html
-- Compress images — format choices, quality settings and lossless boundaries: https://gotoolmatrix.com/guides/compress-image.html
+- Merge PDF files online — steps, page ranges, quality and limitations: https://www.gotoolmatrix.com/guides/merge-pdf.html
+- Compress PDF files — algorithms, levels, DPI, quality and text tradeoffs: https://www.gotoolmatrix.com/guides/compress-pdf.html
+- Compress images — format choices, quality settings and lossless boundaries: https://www.gotoolmatrix.com/guides/compress-image.html
 
 ## Provenance and editorial policy
 
-- About, ownership, sources and review method: https://gotoolmatrix.com/about
-- Privacy policy: https://gotoolmatrix.com/privacy
-- Terms, payment and refund policy: https://gotoolmatrix.com/terms
-- Dated changes: https://gotoolmatrix.com/changelog
+- About, ownership, sources and review method: https://www.gotoolmatrix.com/about
+- Privacy policy: https://www.gotoolmatrix.com/privacy
+- Terms, payment and refund policy: https://www.gotoolmatrix.com/terms
+- Dated changes: https://www.gotoolmatrix.com/changelog
 - Contact: 905501891wang@gmail.com
 - Each collection's `llms.txt` and visible project page provide the more specific provenance and limitations.
 

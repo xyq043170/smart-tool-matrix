@@ -220,10 +220,14 @@ export default function MarketPage() {
           <p className="text-xs font-bold uppercase tracking-[0.16em] text-primary">{tc('market.guidesLabel')}</p>
           <h2 id="guides-title" className="mt-2 text-2xl font-bold tracking-tight md:text-3xl">{tc('market.guidesTitle')}</h2>
           <p className="mt-3 max-w-3xl text-sm leading-7 text-muted-foreground">{tc('market.guidesDesc')}</p>
-          <div className="mt-6 grid gap-4 md:grid-cols-2">
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
             <a href="/guides/merge-pdf.html" className="rounded-2xl bg-muted/60 p-5 transition hover:bg-muted">
               <h3 className="font-bold">{tc('market.mergeGuideTitle')}</h3>
               <p className="mt-2 text-sm leading-6 text-muted-foreground">{tc('market.mergeGuideDesc')}</p>
+            </a>
+            <a href="/guides/compress-pdf.html" className="rounded-2xl bg-muted/60 p-5 transition hover:bg-muted">
+              <h3 className="font-bold">{tc('market.compressPdfGuideTitle')}</h3>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">{tc('market.compressPdfGuideDesc')}</p>
             </a>
             <a href="/guides/compress-image.html" className="rounded-2xl bg-muted/60 p-5 transition hover:bg-muted">
               <h3 className="font-bold">{tc('market.imageGuideTitle')}</h3>
