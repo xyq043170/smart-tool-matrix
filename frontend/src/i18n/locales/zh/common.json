@@ -248,6 +248,15 @@
     "entertainmentTitle": "娱乐内容（独立分区）",
     "entertainmentDesc": "塔罗、八字等传统文化体验与生产力工具分开呈现；输出没有公认科学依据，不用于高风险决策。",
     "entertainmentLink": "进入娱乐工具",
-    "productivityTools": "生产力工具"
+    "productivityTools": "生产力工具",
+    "factsLabel": "当前可核验事实",
+    "factsTitle": "免费额度与通行证价格",
+    "guestQuotaTitle": "访客每日免费次数",
+    "guestQuotaDesc": "默认每日 3 次，按 Asia/Shanghai 时区刷新；页面实时剩余次数为准。",
+    "userQuotaTitle": "登录用户每日免费次数",
+    "userQuotaDesc": "默认每日 5 次。注册与登录涉及账户数据，详见隐私政策。",
+    "pricingFactTitle": "付费通行证价格范围",
+    "pricingFactDesc": "1 天 $0.99、7 天 $4.99、30 天 $9.99、365 天 $59.99；结账页为最终依据。",
+    "pricingFactLink": "查看方案和续费方式"
   }
 }

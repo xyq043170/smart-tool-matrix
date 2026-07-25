@@ -15,6 +15,14 @@
 - Developer tools: https://gotoolmatrix.com/developer/
 - Website inspection: https://gotoolmatrix.com/seo/
 - Traditional-culture entertainment: https://divination.gotoolmatrix.com/
+- Website-inspection explainer and check coverage: https://gotoolmatrix.com/website-inspection
+
+## Quotas and prices
+
+- Default guest quota: 3 tool launches per day.
+- Default signed-in quota: 5 tool launches per day.
+- Quota reset timezone: Asia/Shanghai.
+- Listed access passes: USD 0.99/1 day, USD 4.99/7 days, USD 9.99/30 days, USD 59.99/365 days. Checkout controls current availability and final price.
 
 ## Processing and limitations
 

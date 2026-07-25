@@ -245,6 +245,29 @@ export default function MarketPage() {
         </section>
       )}
 
+      <section className="shell py-14 md:py-20" aria-labelledby="facts-title">
+        <p className="text-xs font-bold uppercase tracking-[0.16em] text-primary">{tc('market.factsLabel')}</p>
+        <h2 id="facts-title" className="mt-2 text-2xl font-bold tracking-tight md:text-3xl">{tc('market.factsTitle')}</h2>
+        <div className="mt-7 grid gap-4 md:grid-cols-3">
+          <article className="rounded-2xl border border-border bg-card p-6">
+            <strong className="text-3xl">3</strong>
+            <h3 className="mt-3 font-bold">{tc('market.guestQuotaTitle')}</h3>
+            <p className="mt-2 text-sm leading-6 text-muted-foreground">{tc('market.guestQuotaDesc')}</p>
+          </article>
+          <article className="rounded-2xl border border-border bg-card p-6">
+            <strong className="text-3xl">5</strong>
+            <h3 className="mt-3 font-bold">{tc('market.userQuotaTitle')}</h3>
+            <p className="mt-2 text-sm leading-6 text-muted-foreground">{tc('market.userQuotaDesc')}</p>
+          </article>
+          <article className="rounded-2xl border border-border bg-card p-6">
+            <strong className="text-3xl">$0.99–$59.99</strong>
+            <h3 className="mt-3 font-bold">{tc('market.pricingFactTitle')}</h3>
+            <p className="mt-2 text-sm leading-6 text-muted-foreground">{tc('market.pricingFactDesc')}</p>
+            <Link to="/subscription" className="mt-3 inline-block text-sm font-semibold text-primary hover:underline">{tc('market.pricingFactLink')}</Link>
+          </article>
+        </div>
+      </section>
+
       <section className="shell py-14 md:py-20" aria-labelledby="processing-title">
         <div className="rounded-3xl border border-border bg-card p-7 shadow-[0_8px_30px_hsl(var(--shadow-soft))] md:p-10">
           <p className="text-xs font-bold uppercase tracking-[0.16em] text-primary">{tc('market.evidenceLabel')}</p>

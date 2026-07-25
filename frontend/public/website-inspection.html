@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>网站检测包含什么：DNS、TLS、响应头与索引检查｜Smart Tool Matrix</title>
+  <meta name="description" content="网站检测工具可检查哪些项目：DNS、TLS 证书、HTTP 响应头、页面元数据、技术栈、robots.txt 和 sitemap。说明输入、输出、限制与安全检测边界。">
+  <meta name="author" content="Smart Tool Matrix 编辑团队">
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+  <link rel="canonical" href="https://gotoolmatrix.com/website-inspection">
+  <style>
+    :root{color-scheme:light dark;font-family:system-ui,-apple-system,sans-serif;line-height:1.7}body{margin:0;background:#f7f7f5;color:#191919}header,main,footer{max-width:900px;margin:auto;padding:24px}nav{display:flex;gap:18px;flex-wrap:wrap}a{color:#1769aa}h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.12}h2{margin-top:2.2rem}table{width:100%;border-collapse:collapse}th,td{border:1px solid #bbb;padding:10px;text-align:left;vertical-align:top}.note{background:#fff6d8;border-left:4px solid #e0a400;padding:14px}.cta{display:inline-block;background:#1769aa;color:white;padding:10px 16px;border-radius:8px;text-decoration:none}@media(prefers-color-scheme:dark){body{background:#151515;color:#eee}.note{background:#302a18}}
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"网站检测包含什么：DNS、TLS、响应头与索引检查","datePublished":"2026-07-25","dateModified":"2026-07-25","author":{"@type":"Organization","name":"Smart Tool Matrix 编辑团队"},"publisher":{"@type":"Organization","name":"Smart Tool Matrix"},"mainEntityOfPage":"https://gotoolmatrix.com/website-inspection","citation":["https://github.com/Lissy93/web-check","https://github.com/xyq043170/seo-tools-project"]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"网站检测是安全审计吗？","acceptedAnswer":{"@type":"Answer","text":"不是。结果是对公开网址在某一时点的自动观察，不包含授权渗透测试、代码审计或合规认证。"}},{"@type":"Question","name":"检测会读取什么？","acceptedAnswer":{"@type":"Answer","text":"服务端请求用户提交的公开网址，并汇总可公开获得的 DNS、TLS、HTTP 响应、页面元数据、技术线索、robots.txt 和 sitemap 信息。"}},{"@type":"Question","name":"为什么首次检测可能较慢？","acceptedAnswer":{"@type":"Answer","text":"检测服务当前托管在 Render，空闲实例可能发生冷启动。本站不公布未经持续测量的固定响应时间保证。"}}]}]}
+  </script>
+</head>
+<body>
+  <header><nav><a href="/">工具目录</a><a href="/seo/">开始检测</a><a href="/about">来源与方法</a><a href="/privacy">隐私</a></nav></header>
+  <main>
+    <article>
+      <p>网站检测说明 · 发布/核对：2026-07-25 · Smart Tool Matrix 编辑团队</p>
+      <h1>网站检测具体包含什么？</h1>
+      <p><strong>直接答案：</strong>输入一个公开网址后，检测服务会从服务端请求该站点，并汇总 DNS、TLS 证书、HTTP 状态与响应头、页面标题和描述、技术栈线索、robots.txt 与 sitemap 等公开信息。结果只代表检测时刻的自动观察，不是渗透测试、排名保证或合规认证。</p>
+      <p><a class="cta" href="/seo/">打开网站检测工具</a></p>
+      <h2>检测项目与可回答的问题</h2>
+      <table><thead><tr><th>检测项</th><th>可以看到什么</th><th>不能据此断言什么</th></tr></thead><tbody>
+        <tr><td>DNS</td><td>公开 DNS 解析和相关记录线索。</td><td>不能证明域名控制权或所有内部 DNS 配置。</td></tr>
+        <tr><td>TLS 证书</td><td>公开端点返回的证书主体、签发者、有效期等。</td><td>不能代替完整 TLS 配置审计或证明业务可信。</td></tr>
+        <tr><td>HTTP 响应</td><td>状态码、重定向和可见响应头。</td><td>单次结果不能证明全球节点始终可用。</td></tr>
+        <tr><td>页面元数据</td><td>标题、描述、社交元数据等公开 HTML 信息。</td><td>不能保证搜索引擎一定采用或获得排名。</td></tr>
+        <tr><td>技术栈线索</td><td>根据公开资源和响应特征推测的技术。</td><td>指纹可能误判，不应作为内部架构事实。</td></tr>
+        <tr><td>robots / sitemap</td><td>文件是否可访问及其当前公开内容。</td><td>存在文件不代表所有 URL 已收录或会被索引。</td></tr>
+      </tbody></table>
+      <h2>输入、处理和输出</h2>
+      <ol>
+        <li>输入你有权检查的公开 HTTP 或 HTTPS 地址。</li>
+        <li>检测服务从服务器侧向目标站点及相关公开端点发送请求。</li>
+        <li>页面将多个自动检查结果组织成报告；结果会随 DNS、证书、部署和页面内容变化。</li>
+        <li>对重要结论，应使用浏览器开发者工具、DNS/TLS 专用工具或授权安全测试进行复核。</li>
+      </ol>
+      <h2>响应时间与可用性</h2>
+      <p>当前检测部署运行在 Render。空闲实例可能冷启动，因此首次打开或首次检测可能比后续请求更慢。本站没有足够的持续测量数据，不提供固定秒数、可用率或性能保证。</p>
+      <div class="note"><strong>安全边界：</strong>该工具只用于汇总公开可见信息。不要把结果称为漏洞扫描、渗透测试、隐私合规审计或搜索排名诊断结论。</div>
+      <h2>本站相对 Web-Check 增加了什么</h2>
+      <p>检测能力基于 Alicia Sykes 的开源项目 Web-Check。Smart Tool Matrix 没有原创声明这些检测模块；本站增加的是统一工具目录和账户/额度入口、中文说明、当前部署关系披露、检测边界说明，以及与其他生产力工具的统一导航。Web-Check 项目仍是功能与代码的原始来源。</p>
+      <h2>来源</h2>
+      <ul>
+        <li><a href="https://github.com/Lissy93/web-check">Web-Check 上游项目与源代码</a></li>
+        <li><a href="https://github.com/xyq043170/seo-tools-project">Smart Tool Matrix 当前部署仓库</a></li>
+      </ul>
+    </article>
+  </main>
+  <footer><a href="/changelog">更新日志</a> · <a href="/terms">服务条款</a> · 更正联系：905501891wang@gmail.com</footer>
+</body>
+</html>

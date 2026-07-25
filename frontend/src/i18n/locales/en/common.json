@@ -248,6 +248,15 @@
     "entertainmentTitle": "Entertainment (separate section)",
     "entertainmentDesc": "Traditional-culture experiences are separated from productivity tools. Outputs have no established scientific basis and are not for high-stakes decisions.",
     "entertainmentLink": "Open entertainment tools",
-    "productivityTools": "Productivity tools"
+    "productivityTools": "Productivity tools",
+    "factsLabel": "Current verifiable facts",
+    "factsTitle": "Free quotas and access-pass prices",
+    "guestQuotaTitle": "Daily guest uses",
+    "guestQuotaDesc": "The default is 3 per day, resetting in Asia/Shanghai; the live remaining count on the page controls.",
+    "userQuotaTitle": "Daily signed-in uses",
+    "userQuotaDesc": "The default is 5 per day. Registration and sign-in involve account data described in the privacy policy.",
+    "pricingFactTitle": "Paid pass price range",
+    "pricingFactDesc": "1 day $0.99, 7 days $4.99, 30 days $9.99, and 365 days $59.99; checkout controls.",
+    "pricingFactLink": "See plans and renewal options"
   }
 }

@@ -63,6 +63,10 @@
             "dest": "https://seo-tools-project.onrender.com/check"
         },
         {
+            "src": "/website-inspection",
+            "dest": "/frontend/website-inspection.html"
+        },
+        {
             "src": "/seo/(.*)",
             "dest": "https://seo-tools-project.onrender.com/check/$1"
         },

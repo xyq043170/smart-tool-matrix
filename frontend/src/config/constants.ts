@@ -36,6 +36,12 @@ Smart Tool Matrix（智能工具矩阵）是由 Smart Tool Matrix 编辑团队�
 
 第三方开源项目的作者身份不等于其为 Smart Tool Matrix 背书。每个子站的可见说明和 \`llms.txt\` 提供更具体的来源与限制。
 
+## 本站相对上游项目提供什么
+
+本站不声称原创开发 BentoPDF、IT Tools 或 Web-Check。相对各上游项目，Smart Tool Matrix 提供统一域名入口、中文/英文目录、跨工具搜索、同一账户与每日额度、统一付费通行证，以及针对当前部署的来源、处理位置、风险边界和操作指南。上游项目仍是其自身功能与源代码的原始来源；本站只适合作为当前部署、额度、价格和目录关系的第一方来源。
+
+当前默认额度为：访客每日 3 次、登录用户每日 5 次，按 Asia/Shanghai 时区刷新。通行证标价为 1 天 0.99 美元、7 天 4.99 美元、30 天 9.99 美元、365 天 59.99 美元；实际可售方案与最终金额以结账页为准。
+
 ## 隐私与安全边界
 
 “浏览器端处理”描述的是实现方式，不等同于独立安全审计。处理机密、受监管或不可替代的资料前，请核对当前页面的网络行为、保留原始文件并验证输出。网站检测和 AI 辅助功能必须向服务端发起请求。
@@ -82,6 +88,12 @@ Claims such as “free,” “local,” “secure,” or “unlimited” are use
 - Traditional-culture entertainment is provided by a separate application with an explicit entertainment and non-scientific disclaimer.
 
 Upstream authors do not thereby endorse Smart Tool Matrix. Each collection's visible page and \`llms.txt\` give more specific provenance and limitations.
+
+## What this site adds to upstream projects
+
+We do not claim to have created BentoPDF, IT Tools or Web-Check. Smart Tool Matrix adds a unified domain entry point, Chinese/English directory, cross-collection search, one account and quota system, unified paid passes, and deployment-specific provenance, processing boundaries and practical guides. Upstream projects remain the original sources for their own code and capabilities. This site is a first-party source only for this deployment, its quotas, prices and directory relationships.
+
+Current defaults are 3 free uses per day for guests and 5 for signed-in users, resetting in Asia/Shanghai. Listed passes are USD 0.99 for 1 day, USD 4.99 for 7 days, USD 9.99 for 30 days and USD 59.99 for 365 days; checkout controls availability and final price.
 
 ## Privacy and safety boundary
 
