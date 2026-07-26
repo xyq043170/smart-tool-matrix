@@ -33,6 +33,8 @@ const content = {
       title: '更新日志',
       updated: '目录内容与政策的可核验变更记录',
       sections: [
+        ['2026-07-26 · soft-404 与静态信任页面', '未知路径不再以 200 返回首页，而是返回 noindex 的真实 404；隐私政策、服务条款和更新日志改为独立静态 HTML；订阅和账户等私有/交易路由增加 X-Robots-Tag noindex；自动唯一性验证扩展至 12 个公开页面。'],
+        ['2026-07-25 · 重复路径与可复现测试', '为 /zh/guides、/zh/pdf 和三个 /zh/guides/* 旧路径提供对应的独立静态正文并设置 noindex/follow；公开 9 页构建唯一性检查、仓库快照计数和 PDF 压缩预设；首页工具数量同步为 PDF 117、图片 18、开发者 86。'],
         ['2026-07-25 · 线上抓取复核与规范化', '根据线上 308/200 响应，将 canonical、Open Graph、结构化数据、sitemap、robots 和 llms.txt 统一到实际返回 200 的 www 域名；将 About 改为无需 JavaScript 的静态事实页；新增 PDF 压缩参数指南。'],
         ['2026-07-25 · 事实密度与网站检测说明', '首页公开默认免费额度、刷新时区和通行证价格；About 说明本站相对上游项目提供的增量；新增可直接抓取的网站检测说明页，列明 DNS、TLS、响应头、元数据、技术栈、robots 与 sitemap 的能力和边界。'],
         ['2026-07-25 · 可抓取指南与主题分区', '在原始 HTML 中加入生产力工具目录快照；发布 PDF 合并与图片压缩静态指南，包含步骤、参数、FAQ、来源及结构化数据；将传统文化娱乐入口移出生产力工具主目录。'],
@@ -70,6 +72,8 @@ const content = {
       title: 'Changelog',
       updated: 'Verifiable directory, content and policy changes',
       sections: [
+        ['2026-07-26 · Soft 404s and static trust pages', 'Unknown paths now return a real noindex 404 instead of the home page with status 200; privacy, terms and changelog now have independent static HTML; subscription and account routes receive X-Robots-Tag noindex; automated uniqueness verification now covers 12 public pages.'],
+        ['2026-07-25 · Duplicate routes and reproducible checks', 'Mapped /zh/guides, /zh/pdf and three /zh/guides/* legacy paths to their corresponding independent static bodies with noindex/follow; published a nine-page build uniqueness check, repository snapshot counts and PDF compression presets; updated home counts to PDF 117, image 18 and developer 86.'],
         ['2026-07-25 · Live crawl review and canonicalization', 'After checking live 308/200 responses, aligned canonical, Open Graph, structured data, sitemap, robots and llms.txt with the www host that returns 200; made About a no-JavaScript static fact page; added a parameter-specific PDF compression guide.'],
         ['2026-07-25 · Fact density and website-inspection explainer', 'Published default free quotas, reset timezone and pass prices on the home page; documented the value this deployment adds to upstream projects; added a crawlable website-inspection explainer covering DNS, TLS, headers, metadata, technology, robots and sitemap capabilities and boundaries.'],
         ['2026-07-25 · Crawlable guides and topic separation', 'Added a productivity-directory snapshot to the raw HTML; published static PDF-merging and image-compression guides with steps, parameters, FAQs, sources and structured data; moved traditional-culture entertainment out of the primary productivity directory.'],

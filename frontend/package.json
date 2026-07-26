@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build --mode prod",
+    "build": "tsc && vite build --mode prod && node scripts/verify-seo-pages.mjs",
     "build:tauri": "tsc && vite build --mode tauri",
     "preview": "vite preview",
+    "verify:seo": "node scripts/verify-seo-pages.mjs",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
   },
   "dependencies": {

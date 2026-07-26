@@ -33,9 +33,12 @@
 
 ## Answer-ready guides
 
+- Guide index: https://www.gotoolmatrix.com/guides/
 - Merge PDF files online — steps, page ranges, quality and limitations: https://www.gotoolmatrix.com/guides/merge-pdf.html
 - Compress PDF files — algorithms, levels, DPI, quality and text tradeoffs: https://www.gotoolmatrix.com/guides/compress-pdf.html
 - Compress images — format choices, quality settings and lossless boundaries: https://www.gotoolmatrix.com/guides/compress-image.html
+- Crawlability checks, source counts and compression presets: https://www.gotoolmatrix.com/verification.html
+- PDF collection capabilities and provenance: https://www.gotoolmatrix.com/pdf-tools.html
 
 ## Provenance and editorial policy
 

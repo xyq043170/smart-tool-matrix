@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>可抓取性与功能参数测试记录｜Smart Tool Matrix</title>
+  <meta name="description" content="Smart Tool Matrix 的可复现测试记录：静态页面唯一性、H1、canonical、JSON-LD，以及 PDF、图片和开发者工具的仓库快照数量与 PDF 压缩预设。">
+  <meta name="robots" content="index,follow,max-snippet:-1">
+  <link rel="canonical" href="https://www.gotoolmatrix.com/verification.html">
+  <style>:root{color-scheme:light dark;font-family:system-ui,-apple-system,sans-serif;line-height:1.7}body{margin:0;background:#f7f7f5;color:#191919}header,main,footer{max-width:900px;margin:auto;padding:24px}nav{display:flex;gap:18px;flex-wrap:wrap}a{color:#1769aa}h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.12}table{width:100%;border-collapse:collapse}th,td{border:1px solid #aaa;padding:10px;text-align:left;vertical-align:top}code{background:#e9e9e5;padding:2px 5px}@media(prefers-color-scheme:dark){body{background:#151515;color:#eee}code{background:#333}}</style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"可抓取性与功能参数测试记录","datePublished":"2026-07-25","dateModified":"2026-07-25","author":{"@type":"Organization","name":"Smart Tool Matrix 编辑团队"},"mainEntityOfPage":"https://www.gotoolmatrix.com/verification.html"}</script>
+</head>
+<body>
+  <header><nav><a href="/">工具目录</a><a href="/guides/">操作指南</a><a href="/about">来源与方法</a><a href="https://github.com/xyq043170/smart-tool-matrix">主站仓库</a></nav></header>
+  <main>
+    <p>测试日期：2026-07-25 · 环境：生产构建产物与当前工作区仓库快照</p>
+    <h1>可抓取性与功能参数测试记录</h1>
+    <h2>自动化抓取测试</h2>
+    <p>主站构建运行 <code>node scripts/verify-seo-pages.mjs</code>。脚本检查 12 个公开静态页面是否各自包含 title、H1、www canonical、可解析 JSON-LD，并以 SHA-256 前 12 位拒绝完全相同的原始 HTML。任一检查失败会让生产构建退出。</p>
+    <h2>当前仓库快照数量</h2>
+    <table><thead><tr><th>集合</th><th>计数方法</th><th>结果</th></tr></thead><tbody>
+      <tr><td>PDF</td><td><code>src/pages/*.html</code></td><td>117 个页面接口</td></tr>
+      <tr><td>图片</td><td><code>src/pages/*.html</code></td><td>18 个页面接口</td></tr>
+      <tr><td>开发者</td><td><code>src/tools/*/</code></td><td>86 个工具目录</td></tr>
+    </tbody></table>
+    <h2>PDF Condense 压缩预设</h2>
+    <table><thead><tr><th>等级</th><th>图片质量</th><th>目标 DPI</th><th>处理阈值</th></tr></thead><tbody>
+      <tr><td>Light</td><td>90</td><td>150</td><td>200 DPI</td></tr>
+      <tr><td>Balanced</td><td>75</td><td>96</td><td>150 DPI</td></tr>
+      <tr><td>Aggressive</td><td>50</td><td>72</td><td>100 DPI</td></tr>
+      <tr><td>Extreme</td><td>30</td><td>60</td><td>96 DPI</td></tr>
+    </tbody></table>
+    <p>这些数值来自当前部署源代码，不代表固定压缩率或主观画质分数。实际结果取决于输入文件；本站尚未发布跨设备性能基准，因此不提供未经持续测试的速度数据。</p>
+    <h2>复核与更正</h2>
+    <p>复核入口：<a href="https://github.com/xyq043170/pdf-tools">PDF 部署仓库</a>、<a href="https://github.com/xyq043170/sharp-web-tools">图片部署仓库</a>、<a href="https://github.com/xyq043170/dev-tools">开发者工具部署仓库</a>。发现计数或参数过期，请联系 905501891wang@gmail.com。</p>
+  </main>
+  <footer>该记录是本站当前部署的第一方测试记录，不是第三方审计。</footer>
+</body>
+</html>

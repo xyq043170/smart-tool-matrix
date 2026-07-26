@@ -71,6 +71,61 @@
             "dest": "/frontend/about.html"
         },
         {
+            "src": "/zh/guides",
+            "dest": "/frontend/guides/index.html",
+            "headers": {
+                "X-Robots-Tag": "noindex, follow"
+            }
+        },
+        {
+            "src": "/guides",
+            "dest": "/frontend/guides/index.html"
+        },
+        {
+            "src": "/guides/",
+            "dest": "/frontend/guides/index.html"
+        },
+        {
+            "src": "/privacy",
+            "dest": "/frontend/privacy.html"
+        },
+        {
+            "src": "/terms",
+            "dest": "/frontend/terms.html"
+        },
+        {
+            "src": "/changelog",
+            "dest": "/frontend/changelog.html"
+        },
+        {
+            "src": "/zh/pdf",
+            "dest": "/frontend/pdf-tools.html",
+            "headers": {
+                "X-Robots-Tag": "noindex, follow"
+            }
+        },
+        {
+            "src": "/zh/guides/merge-pdf",
+            "dest": "/frontend/guides/merge-pdf.html",
+            "headers": {
+                "X-Robots-Tag": "noindex, follow"
+            }
+        },
+        {
+            "src": "/zh/guides/compress-pdf",
+            "dest": "/frontend/guides/compress-pdf.html",
+            "headers": {
+                "X-Robots-Tag": "noindex, follow"
+            }
+        },
+        {
+            "src": "/zh/guides/compress-image",
+            "dest": "/frontend/guides/compress-image.html",
+            "headers": {
+                "X-Robots-Tag": "noindex, follow"
+            }
+        },
+        {
             "src": "/seo/(.*)",
             "dest": "https://seo-tools-project.onrender.com/check/$1"
         },
@@ -91,8 +146,41 @@
             "dest": "/frontend/$1.$2"
         },
         {
-            "src": "/(.*)",
+            "src": "/",
             "dest": "frontend/"
+        },
+        {
+            "src": "/subscription",
+            "dest": "frontend/",
+            "headers": {
+                "X-Robots-Tag": "noindex, nofollow"
+            }
+        },
+        {
+            "src": "/account",
+            "dest": "frontend/",
+            "headers": {
+                "X-Robots-Tag": "noindex, nofollow"
+            }
+        },
+        {
+            "src": "/portrait",
+            "dest": "frontend/",
+            "headers": {
+                "X-Robots-Tag": "noindex, nofollow"
+            }
+        },
+        {
+            "src": "/auth/(.*)",
+            "dest": "frontend/",
+            "headers": {
+                "X-Robots-Tag": "noindex, nofollow"
+            }
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/frontend/404.html",
+            "status": 404
         }
     ]
 }

@@ -23,9 +23,9 @@ export interface ToolCategory {
 
 export const TOOLS: Tool[] = [
   { id: 'divination_tools', category: 'divination', icon: Sparkles, type: 'external', route: DIVINATION_TOOLS_URL, subToolCount: 7 },
-  { id: 'pdf_tools', category: 'document', icon: FileText, type: 'external', route: '/pdf/', subToolCount: 12 },
-  { id: 'image_tools', category: 'image', icon: Image, type: 'external', route: '/image/', subToolCount: 8 },
-  { id: 'developer_tools', category: 'developer', icon: Code2, type: 'external', route: '/developer/', subToolCount: 15 },
+  { id: 'pdf_tools', category: 'document', icon: FileText, type: 'external', route: '/pdf/', subToolCount: 117 },
+  { id: 'image_tools', category: 'image', icon: Image, type: 'external', route: '/image/', subToolCount: 18 },
+  { id: 'developer_tools', category: 'developer', icon: Code2, type: 'external', route: '/developer/', subToolCount: 86 },
   { id: 'seo_tools', category: 'seo', icon: SearchCheck, type: 'external', route: '/seo/', subToolCount: 6 },
 ]
 

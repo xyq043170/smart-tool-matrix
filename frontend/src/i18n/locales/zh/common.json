@@ -241,6 +241,7 @@
     "guidesLabel": "可直接引用的操作内容",
     "guidesTitle": "步骤、参数与常见问题",
     "guidesDesc": "指南基于当前部署界面和源代码核对，明确说明适用场景、参数取舍、免费额度与不能保证的结果。",
+    "verificationLink": "查看公开测试方法、页面唯一性检查与当前参数快照",
     "mergeGuideTitle": "免费在线合并 PDF 指南",
     "mergeGuideDesc": "文件排序、指定页码、书签与质量影响，以及浏览器端处理限制。",
     "compressPdfGuideTitle": "免费在线压缩 PDF 指南",

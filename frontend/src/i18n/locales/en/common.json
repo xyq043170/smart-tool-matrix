@@ -241,6 +241,7 @@
     "guidesLabel": "Answer-ready guidance",
     "guidesTitle": "Steps, parameters and common questions",
     "guidesDesc": "Guides are checked against the current deployment and source code, with explicit use cases, parameter tradeoffs, quotas and non-guarantees.",
+    "verificationLink": "See the public test method, page-uniqueness checks and current parameter snapshot",
     "mergeGuideTitle": "Free online PDF merging guide",
     "mergeGuideDesc": "File order, page ranges, bookmarks, quality effects and browser-processing limits.",
     "compressPdfGuideTitle": "Free online PDF compression guide",
