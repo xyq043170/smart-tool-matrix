@@ -88,6 +88,21 @@ async def get_subscription_status(db: AsyncConnection, user_id: int) -> dict:
     )
     upcoming = await cursor.fetchone()
     period_end = subscription["current_period_end"]
+    if subscription.get("billing_type", "one_time") == "one_time":
+        # One-time passes are stored as consecutive active/scheduled rows. Show
+        # the end of the full paid-through chain, not merely the end of the row
+        # that happens to be active right now.
+        cursor = await db.execute(
+            "SELECT MAX(current_period_end) AS paid_through "
+            "FROM subscriptions WHERE user_id = %s "
+            "AND billing_type = 'one_time' "
+            "AND status IN ('active', 'scheduled', 'cancelled', 'suspended') "
+            "AND current_period_end > NOW()",
+            (user_id,),
+        )
+        paid_through = await cursor.fetchone()
+        if paid_through and paid_through["paid_through"]:
+            period_end = paid_through["paid_through"]
     await db.commit()
     return {
         "status": "active",

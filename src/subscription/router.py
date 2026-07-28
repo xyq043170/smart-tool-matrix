@@ -411,12 +411,50 @@ async def capture_payment(
 
     try:
         capture = await paypal.capture_order(body.order_id)
-    except paypal.PayPalAPIError:
-        _logger.exception("Failed to capture PayPal order=%s", body.order_id)
-        raise HTTPException(
-            status_code=502,
-            detail={"code": "paypal_unavailable", "message": "PayPal capture failed"},
-        )
+    except paypal.PayPalAPIError as capture_exc:
+        # The previous capture attempt may have reached PayPal even when our
+        # response handling failed. Recover completed orders instead of asking
+        # PayPal to capture them a second time.
+        try:
+            details = await paypal.get_order_details(body.order_id)
+        except paypal.PayPalAPIError:
+            _logger.exception("Failed to capture PayPal order=%s", body.order_id)
+            raise HTTPException(
+                status_code=502,
+                detail={
+                    "code": "paypal_unavailable",
+                    "message": "PayPal capture failed",
+                },
+            ) from capture_exc
+        if details.get("status") != "COMPLETED":
+            _logger.exception(
+                "Failed to capture PayPal order=%s status=%s",
+                body.order_id,
+                details.get("status"),
+                exc_info=capture_exc,
+            )
+            raise HTTPException(
+                status_code=502,
+                detail={
+                    "code": "paypal_unavailable",
+                    "message": "PayPal capture failed",
+                },
+            ) from capture_exc
+        capture = details
+    else:
+        # PayPal's capture response may omit purchase-unit metadata used by our
+        # verification. The order-details response contains the canonical
+        # reference_id/custom_id plus the completed capture.
+        try:
+            details = await paypal.get_order_details(body.order_id)
+            if details.get("status") == "COMPLETED":
+                capture = details
+        except paypal.PayPalAPIError:
+            _logger.warning(
+                "Unable to refresh captured PayPal order=%s; "
+                "validating the capture response",
+                body.order_id,
+            )
 
     try:
         access = await _activate_captured_order(db, order, capture)
