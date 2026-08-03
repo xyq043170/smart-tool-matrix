@@ -7,6 +7,12 @@ import enCommon from './locales/en/common.json'
 import zhTools from './locales/zh/tools.json'
 import enTools from './locales/en/tools.json'
 
+const canonicalLanguage = window.location.pathname === '/en' || window.location.pathname.startsWith('/en/')
+  ? 'en'
+  : window.location.pathname === '/'
+    ? 'zh'
+    : undefined
+
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
@@ -15,7 +21,8 @@ i18n
       zh: { common: zhCommon, tools: zhTools },
       en: { common: enCommon, tools: enTools },
     },
-    fallbackLng: 'en',
+    lng: canonicalLanguage,
+    fallbackLng: 'zh',
     defaultNS: 'common',
     ns: ['common', 'tools'],
     interpolation: { escapeValue: false },

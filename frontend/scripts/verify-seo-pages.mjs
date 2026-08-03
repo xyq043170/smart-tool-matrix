@@ -1,10 +1,11 @@
 import { createHash } from 'node:crypto'
-import { readFileSync } from 'node:fs'
+import { existsSync, readFileSync } from 'node:fs'
 
 const vercelConfig = JSON.parse(readFileSync('../vercel.json', 'utf8'))
 
 const pages = [
   ['/', 'dist/index.html'],
+  ['/en/', 'dist/en/index.html'],
   ['/about', 'dist/about.html'],
   ['/website-inspection', 'dist/website-inspection.html'],
   ['/guides/', 'dist/guides/index.html'],
@@ -41,6 +42,11 @@ for (const [route, expectedDestination] of expectedSeoRoutes) {
 }
 
 for (const [route, file] of pages) {
+  if (!existsSync(file)) {
+    failed = true
+    console.error(`FAIL ${route}: expected built page ${file}`)
+    continue
+  }
   const html = readFileSync(file, 'utf8')
   const hash = createHash('sha256').update(html).digest('hex').slice(0, 12)
   const title = html.match(/<title>([^<]+)<\/title>/)?.[1]
@@ -53,12 +59,39 @@ for (const [route, file] of pages) {
     failed = true
     console.error(`FAIL ${route}: title=${Boolean(title)} h1=${Boolean(h1)} canonical=${canonical || 'missing'}`)
   }
+  if (route === '/en/') {
+    const expectedEnglishSignals = [
+      ['document language', '<html lang="en">'],
+      ['self canonical', '<link rel="canonical" href="https://www.gotoolmatrix.com/en/"'],
+      ['English hreflang', 'hreflang="en" href="https://www.gotoolmatrix.com/en/"'],
+      ['Chinese hreflang', 'hreflang="zh-CN" href="https://www.gotoolmatrix.com/"'],
+    ]
+    for (const [signal, expected] of expectedEnglishSignals) {
+      if (!html.includes(expected)) {
+        failed = true
+        console.error(`FAIL ${route}: missing ${signal}`)
+      }
+    }
+  }
   if (hashes.has(hash)) {
     failed = true
     console.error(`FAIL ${route}: duplicate raw HTML with ${hashes.get(hash)} (${hash})`)
   }
   hashes.set(hash, route)
   console.log(`PASS ${route} bytes=${Buffer.byteLength(html)} sha256=${hash} jsonld=${jsonLdBlocks.length}`)
+}
+
+const sitemap = readFileSync('dist/sitemap.xml', 'utf8')
+if (!sitemap.includes('<loc>https://www.gotoolmatrix.com/en/</loc>')) {
+  failed = true
+  console.error('FAIL sitemap: missing canonical English homepage')
+}
+
+for (const route of ['/en', '/en/']) {
+  if (routeMap.get(route) !== '/frontend/en/index.html') {
+    failed = true
+    console.error(`FAIL ${route}: missing English landing-page route`)
+  }
 }
 
 if (failed) process.exit(1)

@@ -75,6 +75,14 @@
             "dest": "/frontend/about.html"
         },
         {
+            "src": "/en",
+            "dest": "/frontend/en/index.html"
+        },
+        {
+            "src": "/en/",
+            "dest": "/frontend/en/index.html"
+        },
+        {
             "src": "/zh/guides",
             "dest": "/frontend/guides/index.html",
             "headers": {
