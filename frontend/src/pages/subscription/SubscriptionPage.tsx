@@ -8,6 +8,7 @@ import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Check, ArrowLeft, RefreshCw, ShieldCheck, Zap } from 'lucide-react'
 import { toast } from 'sonner'
 import { PLANS, formatUsd, getSavingsPercent } from './pricing'
+import { PlanSelector } from './PlanSelector'
 
 export default function SubscriptionPage() {
   const { t } = useTranslation('common')
@@ -20,7 +21,10 @@ export default function SubscriptionPage() {
   const settings = useGlobalState((state) => state.settings)
   const [loading, setLoading] = useState<string | null>(null)
   const [billingType, setBillingType] = useState<'one_time' | 'recurring'>('one_time')
+  const [selectedPlanId, setSelectedPlanId] = useState('monthly')
   const captureStarted = useRef(false)
+  const selectedPlan = PLANS.find((plan) => plan.id === selectedPlanId) ?? PLANS[2]
+  const selectedSavingsPercent = getSavingsPercent(selectedPlan)
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search)
@@ -322,77 +326,69 @@ export default function SubscriptionPage() {
         </p>
       </Tabs>
 
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-        {PLANS.map((plan) => {
-          const savingsPercent = getSavingsPercent(plan)
-          const isPopular = plan.id === 'monthly'
+      <div className="space-y-4">
+        <PlanSelector selectedPlanId={selectedPlan.id} onSelect={setSelectedPlanId} />
 
-          return (
-            <Card
-              key={plan.id}
-              className={`transition-colors hover:border-foreground/20 ${
-                isPopular ? 'border-primary/50 ring-1 ring-primary/20' : ''
-              }`}
+        <Card className="mx-auto w-full max-w-4xl border-primary/30 bg-card shadow-sm">
+          <CardHeader className="space-y-2 text-center">
+            <CardTitle className="text-xl">
+              {t(`subscription.plans.${selectedPlan.id}`, selectedPlan.id)}
+            </CardTitle>
+            {selectedPlan.badgeKey && (
+              <span className="mx-auto inline-flex rounded-full bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary">
+                {t(`subscription.labels.${selectedPlan.badgeKey}`)}
+              </span>
+            )}
+          </CardHeader>
+          <CardContent className="mx-auto max-w-xl space-y-5 text-center">
+            <div>
+              <span className="text-4xl font-bold">{formatUsd(selectedPlan.price)}</span>
+              <span className="text-muted-foreground">
+                /{t(`subscription.period.${selectedPlan.period}`, selectedPlan.period)}
+              </span>
+              {selectedSavingsPercent !== null && selectedPlan.comparisonId && (
+                <p className="mt-2 text-sm font-medium text-emerald-600 dark:text-emerald-400">
+                  {t('subscription.savings', { percent: selectedSavingsPercent })}
+                  <span className="block font-normal text-muted-foreground">
+                    {t(`subscription.savingsBasis.${selectedPlan.comparisonId}`)}
+                  </span>
+                </p>
+              )}
+              <p className="mt-2 text-sm text-muted-foreground">
+                {billingType === 'recurring'
+                  ? t('subscription.recurringPayment')
+                  : t('subscription.oneTimePayment')}
+              </p>
+            </div>
+
+            <ul className="grid gap-2 text-left text-sm sm:grid-cols-3">
+              <li className="flex items-center gap-2">
+                <Check aria-hidden="true" className="h-4 w-4 shrink-0 text-green-500" />
+                {t('subscription.feature.unlimited')}
+              </li>
+              <li className="flex items-center gap-2">
+                <Check aria-hidden="true" className="h-4 w-4 shrink-0 text-green-500" />
+                {t('subscription.feature.allTools')}
+              </li>
+              <li className="flex items-center gap-2">
+                <Check aria-hidden="true" className="h-4 w-4 shrink-0 text-green-500" />
+                {t('subscription.feature.noAds')}
+              </li>
+            </ul>
+
+            <Button
+              className="w-full"
+              onClick={() => handlePurchase(selectedPlan.id)}
+              disabled={loading !== null}
             >
-              <CardHeader className="pb-2 text-center">
-                <CardTitle className="text-lg">
-                  {t(`subscription.plans.${plan.id}`, plan.id)}
-                </CardTitle>
-                {plan.badgeKey && (
-                  <span className="mx-auto inline-flex rounded-full bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary">
-                    {t(`subscription.labels.${plan.badgeKey}`)}
-                  </span>
-                )}
-              </CardHeader>
-              <CardContent className="space-y-4 text-center">
-                <div>
-                  <span className="text-3xl font-bold">{formatUsd(plan.price)}</span>
-                  <span className="text-muted-foreground">
-                    /{t(`subscription.period.${plan.period}`, plan.period)}
-                  </span>
-                  {savingsPercent !== null && plan.comparisonId && (
-                    <p className="mt-2 text-xs font-medium text-emerald-600 dark:text-emerald-400">
-                      {t('subscription.savings', { percent: savingsPercent })}
-                      <span className="block font-normal text-muted-foreground">
-                        {t(`subscription.savingsBasis.${plan.comparisonId}`)}
-                      </span>
-                    </p>
-                  )}
-                  <p className="mt-1 text-xs text-muted-foreground">
-                    {billingType === 'recurring'
-                      ? t('subscription.recurringPayment')
-                      : t('subscription.oneTimePayment')}
-                  </p>
-                </div>
-                <ul className="space-y-2 text-left text-sm">
-                  <li className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-green-500" />
-                    {t('subscription.feature.unlimited')}
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-green-500" />
-                    {t('subscription.feature.allTools')}
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-green-500" />
-                    {t('subscription.feature.noAds')}
-                  </li>
-                </ul>
-                <Button
-                  className="w-full"
-                  onClick={() => handlePurchase(plan.id)}
-                  disabled={loading !== null}
-                >
-                  {loading === `${billingType}:${plan.id}`
-                    ? '...'
-                    : billingType === 'recurring'
-                      ? t('subscription.startSubscription')
-                      : t('subscription.subscribe')}
-                </Button>
-              </CardContent>
-            </Card>
-          )
-        })}
+              {loading === `${billingType}:${selectedPlan.id}`
+                ? '...'
+                : billingType === 'recurring'
+                  ? t('subscription.startSubscription')
+                  : t('subscription.subscribe')}
+            </Button>
+          </CardContent>
+        </Card>
       </div>
     </div>
   )
