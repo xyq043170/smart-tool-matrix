@@ -1,0 +1,34 @@
+[
+  {
+    "id": "daily",
+    "price": 0.99,
+    "durationDays": 1,
+    "period": "day",
+    "badgeKey": "flexible",
+    "comparisonId": null
+  },
+  {
+    "id": "weekly",
+    "price": 4.99,
+    "durationDays": 7,
+    "period": "week",
+    "badgeKey": null,
+    "comparisonId": "daily"
+  },
+  {
+    "id": "monthly",
+    "price": 9.99,
+    "durationDays": 30,
+    "period": "month",
+    "badgeKey": "popular",
+    "comparisonId": "weekly"
+  },
+  {
+    "id": "yearly",
+    "price": 59.99,
+    "durationDays": 365,
+    "period": "year",
+    "badgeKey": "bestValue",
+    "comparisonId": "monthly"
+  }
+]
