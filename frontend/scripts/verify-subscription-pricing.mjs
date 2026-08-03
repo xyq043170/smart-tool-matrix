@@ -53,6 +53,8 @@ assert.deepEqual(en.labels, {
 })
 assert.equal(zh.savings, '省约 {{percent}}%')
 assert.equal(en.savings, 'Save about {{percent}}%')
+assert.equal(zh.planSelectorLabel, '选择使用有效期')
+assert.equal(en.planSelectorLabel, 'Choose an access pass')
 
 const promotionalCopy = JSON.stringify({ zh, en })
 assert.doesNotMatch(promotionalCopy, /原价|限时|划线价|limited[- ]time|regular price|was \$/i)

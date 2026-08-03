@@ -196,6 +196,7 @@
     "createFailed": "暂时无法创建付款订单，请稍后再试",
     "launchBadge": "首发优惠价",
     "launchDescription": "当前为产品上线阶段优惠价格，未来可能调整；结账前会显示最终金额。",
+    "planSelectorLabel": "选择使用有效期",
     "labels": {
       "flexible": "灵活体验",
       "popular": "最受欢迎",

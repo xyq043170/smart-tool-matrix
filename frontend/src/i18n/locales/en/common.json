@@ -196,6 +196,7 @@
     "createFailed": "Unable to create the payment order. Please try again later.",
     "launchBadge": "Launch pricing",
     "launchDescription": "Current prices are introductory launch prices and may change in the future. The final amount is shown before checkout.",
+    "planSelectorLabel": "Choose an access pass",
     "labels": {
       "flexible": "Flexible",
       "popular": "Most popular",
