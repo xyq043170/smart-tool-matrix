@@ -194,6 +194,19 @@
     "notConfigured": "PayPal payment is not configured yet. Please try again later.",
     "paymentUnavailable": "PayPal is temporarily unavailable. Please try again later.",
     "createFailed": "Unable to create the payment order. Please try again later.",
+    "launchBadge": "Launch pricing",
+    "launchDescription": "Current prices are introductory launch prices and may change in the future. The final amount is shown before checkout.",
+    "labels": {
+      "flexible": "Flexible",
+      "popular": "Most popular",
+      "bestValue": "Best value"
+    },
+    "savings": "Save about {{percent}}%",
+    "savingsBasis": {
+      "daily": "Compared with the daily rate of the 1-day pass",
+      "weekly": "Compared with the daily rate of the 7-day pass",
+      "monthly": "Compared with the daily rate of the 30-day pass"
+    },
     "plans": {
       "daily": "Day Pass",
       "weekly": "Week Pass",

@@ -194,6 +194,19 @@
     "notConfigured": "PayPal 支付尚未配置，请稍后再试",
     "paymentUnavailable": "PayPal 暂时不可用，请稍后再试",
     "createFailed": "暂时无法创建付款订单，请稍后再试",
+    "launchBadge": "首发优惠价",
+    "launchDescription": "当前为产品上线阶段优惠价格，未来可能调整；结账前会显示最终金额。",
+    "labels": {
+      "flexible": "灵活体验",
+      "popular": "最受欢迎",
+      "bestValue": "最划算"
+    },
+    "savings": "省约 {{percent}}%",
+    "savingsBasis": {
+      "daily": "相较 1 天通行证的单日价格",
+      "weekly": "相较 7 天通行证的单日价格",
+      "monthly": "相较 30 天通行证的单日价格"
+    },
     "plans": {
       "daily": "日卡",
       "weekly": "周卡",
