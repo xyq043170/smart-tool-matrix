@@ -259,7 +259,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
                 </footer>
             )}
 
-            <FeedbackDialog />
+            {location.pathname !== '/subscription' && <FeedbackDialog />}
         </div>
     )
 }

@@ -7,13 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Check, ArrowLeft, RefreshCw, ShieldCheck, Zap } from 'lucide-react'
 import { toast } from 'sonner'
-
-const PLANS = [
-  { id: 'daily', price: '$0.99', period: 'day' },
-  { id: 'weekly', price: '$4.99', period: 'week' },
-  { id: 'monthly', price: '$9.99', period: 'month' },
-  { id: 'yearly', price: '$59.99', period: 'year' },
-]
+import { PLANS, formatUsd, getSavingsPercent } from './pricing'
 
 export default function SubscriptionPage() {
   const { t } = useTranslation('common')
@@ -297,6 +291,15 @@ export default function SubscriptionPage() {
         </Card>
       )}
 
+      <div className="mx-auto max-w-2xl text-center">
+        <span className="inline-flex rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+          {t('subscription.launchBadge')}
+        </span>
+        <p className="mt-2 text-sm leading-6 text-muted-foreground">
+          {t('subscription.launchDescription')}
+        </p>
+      </div>
+
       <Tabs
         value={billingType}
         onValueChange={(value) => setBillingType(value as 'one_time' | 'recurring')}
@@ -319,54 +322,77 @@ export default function SubscriptionPage() {
         </p>
       </Tabs>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {PLANS.map((plan) => (
-          <Card key={plan.id} className="transition-colors hover:border-foreground/20">
-            <CardHeader className="text-center pb-2">
-              <CardTitle className="text-lg">
-                {t(`subscription.plans.${plan.id}`, plan.id)}
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="text-center space-y-4">
-              <div>
-                <span className="text-3xl font-bold">{plan.price}</span>
-                <span className="text-muted-foreground">
-                  /{t(`subscription.period.${plan.period}`, plan.period)}
-                </span>
-                <p className="mt-1 text-xs text-muted-foreground">
-                  {billingType === 'recurring'
-                    ? t('subscription.recurringPayment')
-                    : t('subscription.oneTimePayment')}
-                </p>
-              </div>
-              <ul className="text-sm space-y-2 text-left">
-                <li className="flex items-center gap-2">
-                  <Check className="h-4 w-4 text-green-500" />
-                  {t('subscription.feature.unlimited')}
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check className="h-4 w-4 text-green-500" />
-                  {t('subscription.feature.allTools')}
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check className="h-4 w-4 text-green-500" />
-                  {t('subscription.feature.noAds')}
-                </li>
-              </ul>
-              <Button
-                className="w-full"
-                onClick={() => handlePurchase(plan.id)}
-                disabled={loading !== null}
-              >
-                {loading === `${billingType}:${plan.id}`
-                  ? '...'
-                  : billingType === 'recurring'
-                    ? t('subscription.startSubscription')
-                    : t('subscription.subscribe')}
-              </Button>
-            </CardContent>
-          </Card>
-        ))}
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+        {PLANS.map((plan) => {
+          const savingsPercent = getSavingsPercent(plan)
+          const isPopular = plan.id === 'monthly'
+
+          return (
+            <Card
+              key={plan.id}
+              className={`transition-colors hover:border-foreground/20 ${
+                isPopular ? 'border-primary/50 ring-1 ring-primary/20' : ''
+              }`}
+            >
+              <CardHeader className="pb-2 text-center">
+                <CardTitle className="text-lg">
+                  {t(`subscription.plans.${plan.id}`, plan.id)}
+                </CardTitle>
+                {plan.badgeKey && (
+                  <span className="mx-auto inline-flex rounded-full bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary">
+                    {t(`subscription.labels.${plan.badgeKey}`)}
+                  </span>
+                )}
+              </CardHeader>
+              <CardContent className="space-y-4 text-center">
+                <div>
+                  <span className="text-3xl font-bold">{formatUsd(plan.price)}</span>
+                  <span className="text-muted-foreground">
+                    /{t(`subscription.period.${plan.period}`, plan.period)}
+                  </span>
+                  {savingsPercent !== null && plan.comparisonId && (
+                    <p className="mt-2 text-xs font-medium text-emerald-600 dark:text-emerald-400">
+                      {t('subscription.savings', { percent: savingsPercent })}
+                      <span className="block font-normal text-muted-foreground">
+                        {t(`subscription.savingsBasis.${plan.comparisonId}`)}
+                      </span>
+                    </p>
+                  )}
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    {billingType === 'recurring'
+                      ? t('subscription.recurringPayment')
+                      : t('subscription.oneTimePayment')}
+                  </p>
+                </div>
+                <ul className="space-y-2 text-left text-sm">
+                  <li className="flex items-center gap-2">
+                    <Check className="h-4 w-4 text-green-500" />
+                    {t('subscription.feature.unlimited')}
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="h-4 w-4 text-green-500" />
+                    {t('subscription.feature.allTools')}
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="h-4 w-4 text-green-500" />
+                    {t('subscription.feature.noAds')}
+                  </li>
+                </ul>
+                <Button
+                  className="w-full"
+                  onClick={() => handlePurchase(plan.id)}
+                  disabled={loading !== null}
+                >
+                  {loading === `${billingType}:${plan.id}`
+                    ? '...'
+                    : billingType === 'recurring'
+                      ? t('subscription.startSubscription')
+                      : t('subscription.subscribe')}
+                </Button>
+              </CardContent>
+            </Card>
+          )
+        })}
       </div>
     </div>
   )
