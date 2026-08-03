@@ -1,6 +1,8 @@
 import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
 
+const vercelConfig = JSON.parse(readFileSync('../vercel.json', 'utf8'))
+
 const pages = [
   ['/', 'dist/index.html'],
   ['/about', 'dist/about.html'],
@@ -18,6 +20,25 @@ const pages = [
 
 const hashes = new Map()
 let failed = false
+
+const routeMap = new Map(vercelConfig.routes.map(({ src, dest }) => [src, dest]))
+const seoOrigin = 'https://seo-tools-project-production.up.railway.app'
+const expectedSeoRoutes = [
+  ['/seo', `${seoOrigin}/check`],
+  ['/seo/', `${seoOrigin}/check`],
+  ['/seo/(.*)', `${seoOrigin}/check/$1`],
+  ['/seo-api/(.*)', `${seoOrigin}/api/$1`],
+  ['/_astro/(.*)', `${seoOrigin}/_astro/$1`],
+  ['/fonts/(.*)', `${seoOrigin}/fonts/$1`],
+]
+for (const [route, expectedDestination] of expectedSeoRoutes) {
+  if (routeMap.get(route) !== expectedDestination) {
+    failed = true
+    console.error(`FAIL ${route}: expected ${expectedDestination}, got ${routeMap.get(route) || 'missing'}`)
+  } else {
+    console.log(`PASS ${route}: explicit website-inspection proxy route`)
+  }
+}
 
 for (const [route, file] of pages) {
   const html = readFileSync(file, 'utf8')
