@@ -19,7 +19,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: path.resolve(rootDirectory, 'index.html'),
-        english: path.resolve(rootDirectory, 'en/index.html'),
+        chinese: path.resolve(rootDirectory, 'zh/index.html'),
       },
     },
   },

@@ -78,12 +78,26 @@
             "dest": "/frontend/about.html"
         },
         {
+            "src": "/zh",
+            "dest": "/frontend/zh/index.html"
+        },
+        {
+            "src": "/zh/",
+            "dest": "/frontend/zh/index.html"
+        },
+        {
             "src": "/en",
-            "dest": "/frontend/en/index.html"
+            "status": 308,
+            "headers": {
+                "Location": "/"
+            }
         },
         {
             "src": "/en/",
-            "dest": "/frontend/en/index.html"
+            "status": 308,
+            "headers": {
+                "Location": "/"
+            }
         },
         {
             "src": "/zh/guides",
