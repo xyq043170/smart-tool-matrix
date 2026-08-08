@@ -5,7 +5,7 @@ const vercelConfig = JSON.parse(readFileSync('../vercel.json', 'utf8'))
 
 const pages = [
   ['/', 'dist/index.html'],
-  ['/en/', 'dist/en/index.html'],
+  ['/zh/', 'dist/zh/index.html'],
   ['/about', 'dist/about.html'],
   ['/website-inspection', 'dist/website-inspection.html'],
   ['/guides/', 'dist/guides/index.html'],
@@ -21,6 +21,23 @@ const pages = [
 
 const hashes = new Map()
 let failed = false
+
+const homepageSignals = new Map([
+  ['/', [
+    ['document language', '<html lang="en">'],
+    ['self canonical', '<link rel="canonical" href="https://www.gotoolmatrix.com/"'],
+    ['English hreflang', 'hreflang="en" href="https://www.gotoolmatrix.com/"'],
+    ['Chinese hreflang', 'hreflang="zh-CN" href="https://www.gotoolmatrix.com/zh/"'],
+    ['English Open Graph locale', '<meta property="og:locale" content="en_US"'],
+  ]],
+  ['/zh/', [
+    ['document language', '<html lang="zh-CN">'],
+    ['self canonical', '<link rel="canonical" href="https://www.gotoolmatrix.com/zh/"'],
+    ['English hreflang', 'hreflang="en" href="https://www.gotoolmatrix.com/"'],
+    ['Chinese hreflang', 'hreflang="zh-CN" href="https://www.gotoolmatrix.com/zh/"'],
+    ['Chinese Open Graph locale', '<meta property="og:locale" content="zh_CN"'],
+  ]],
+])
 
 const routeMap = new Map(vercelConfig.routes.map(({ src, dest }) => [src, dest]))
 const imageRootRoute = vercelConfig.routes.find(({ src }) => src === '/image')
@@ -67,18 +84,10 @@ for (const [route, file] of pages) {
     failed = true
     console.error(`FAIL ${route}: title=${Boolean(title)} h1=${Boolean(h1)} canonical=${canonical || 'missing'}`)
   }
-  if (route === '/en/') {
-    const expectedEnglishSignals = [
-      ['document language', '<html lang="en">'],
-      ['self canonical', '<link rel="canonical" href="https://www.gotoolmatrix.com/en/"'],
-      ['English hreflang', 'hreflang="en" href="https://www.gotoolmatrix.com/en/"'],
-      ['Chinese hreflang', 'hreflang="zh-CN" href="https://www.gotoolmatrix.com/"'],
-    ]
-    for (const [signal, expected] of expectedEnglishSignals) {
-      if (!html.includes(expected)) {
-        failed = true
-        console.error(`FAIL ${route}: missing ${signal}`)
-      }
+  for (const [signal, expected] of homepageSignals.get(route) || []) {
+    if (!html.includes(expected)) {
+      failed = true
+      console.error(`FAIL ${route}: missing ${signal}`)
     }
   }
   if (hashes.has(hash)) {
@@ -90,15 +99,33 @@ for (const [route, file] of pages) {
 }
 
 const sitemap = readFileSync('dist/sitemap.xml', 'utf8')
-if (!sitemap.includes('<loc>https://www.gotoolmatrix.com/en/</loc>')) {
+for (const homepageUrl of [
+  'https://www.gotoolmatrix.com/',
+  'https://www.gotoolmatrix.com/zh/',
+]) {
+  if (!sitemap.includes(`<loc>${homepageUrl}</loc>`)) {
+    failed = true
+    console.error(`FAIL sitemap: missing ${homepageUrl}`)
+  }
+}
+
+if (sitemap.includes('<loc>https://www.gotoolmatrix.com/en/</loc>')) {
   failed = true
-  console.error('FAIL sitemap: missing canonical English homepage')
+  console.error('FAIL sitemap: legacy /en/ homepage must not be indexed')
+}
+
+for (const route of ['/zh', '/zh/']) {
+  if (routeMap.get(route) !== '/frontend/zh/index.html') {
+    failed = true
+    console.error(`FAIL ${route}: missing Chinese homepage route`)
+  }
 }
 
 for (const route of ['/en', '/en/']) {
-  if (routeMap.get(route) !== '/frontend/en/index.html') {
+  const config = vercelConfig.routes.find(({ src }) => src === route)
+  if (config?.status !== 308 || config?.headers?.Location !== '/') {
     failed = true
-    console.error(`FAIL ${route}: missing English landing-page route`)
+    console.error(`FAIL ${route}: expected permanent redirect to /`)
   }
 }
 
