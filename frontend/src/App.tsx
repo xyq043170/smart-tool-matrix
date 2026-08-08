@@ -124,7 +124,7 @@ function App() {
         )}
         <Routes>
           <Route path="/" element={<MarketPage />} />
-          <Route path="/en/" element={<MarketPage />} />
+          <Route path="/zh/" element={<MarketPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/privacy" element={<PolicyPage kind="privacy" />} />
           <Route path="/terms" element={<PolicyPage kind="terms" />} />

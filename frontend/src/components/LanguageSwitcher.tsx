@@ -14,8 +14,12 @@ export function LanguageSwitcher({ showLabel = false }: LanguageSwitcherProps) {
 
   const toggleLanguage = () => {
     const newLang = i18n.resolvedLanguage?.startsWith('zh') ? 'en' : 'zh'
-    if (window.location.pathname === '/' || window.location.pathname === '/en' || window.location.pathname === '/en/') {
-      window.location.assign(newLang === 'en' ? '/en/' : '/')
+    const isCanonicalHomepage = window.location.pathname === '/'
+      || window.location.pathname === '/zh'
+      || window.location.pathname === '/zh/'
+
+    if (isCanonicalHomepage) {
+      window.location.assign(newLang === 'en' ? '/' : '/zh/')
       return
     }
     i18n.changeLanguage(newLang)

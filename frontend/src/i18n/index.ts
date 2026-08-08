@@ -7,9 +7,9 @@ import enCommon from './locales/en/common.json'
 import zhTools from './locales/zh/tools.json'
 import enTools from './locales/en/tools.json'
 
-const canonicalLanguage = window.location.pathname === '/en' || window.location.pathname.startsWith('/en/')
+const canonicalLanguage = window.location.pathname === '/'
   ? 'en'
-  : window.location.pathname === '/'
+  : window.location.pathname === '/zh' || window.location.pathname.startsWith('/zh/')
     ? 'zh'
     : undefined
 
@@ -22,15 +22,15 @@ i18n
       en: { common: enCommon, tools: enTools },
     },
     lng: canonicalLanguage,
-    fallbackLng: 'zh',
+    fallbackLng: 'en',
     defaultNS: 'common',
     ns: ['common', 'tools'],
     interpolation: { escapeValue: false },
     detection: {
-      // New visitors always start in English. Only an explicit language switch
-      // is remembered; the browser/system language no longer overrides it.
+      // Canonical homepage paths override stored preferences. Other routes remember
+      // only an explicit language switch; browser/system language is not consulted.
       order: ['localStorage'],
-      caches: ['localStorage'],
+      caches: canonicalLanguage ? [] : ['localStorage'],
       lookupLocalStorage: 'toolMatrixLanguage',
     },
   })
