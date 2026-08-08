@@ -74,6 +74,10 @@
             "dest": "/frontend/website-inspection.html"
         },
         {
+            "src": "/compress-pdf-to-2mb",
+            "dest": "/frontend/compress-pdf-to-2mb.html"
+        },
+        {
             "src": "/about",
             "dest": "/frontend/about.html"
         },
