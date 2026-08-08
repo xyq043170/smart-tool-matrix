@@ -23,6 +23,14 @@ const hashes = new Map()
 let failed = false
 
 const routeMap = new Map(vercelConfig.routes.map(({ src, dest }) => [src, dest]))
+const imageRootRoute = vercelConfig.routes.find(({ src }) => src === '/image')
+if (imageRootRoute?.status !== 308 || imageRootRoute?.headers?.Location !== '/image/') {
+  failed = true
+  console.error('FAIL /image: expected permanent redirect to /image/')
+} else {
+  console.log('PASS /image: permanent redirect to canonical trailing-slash URL')
+}
+
 const seoOrigin = 'https://seo-tools-project-production.up.railway.app'
 const expectedSeoRoutes = [
   ['/seo', `${seoOrigin}/check`],

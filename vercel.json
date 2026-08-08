@@ -44,7 +44,10 @@
         },
         {
             "src": "/image",
-            "dest": "https://sharp-web-tools.vercel.app/"
+            "status": 308,
+            "headers": {
+                "Location": "/image/"
+            }
         },
         {
             "src": "/image/(.*)",
