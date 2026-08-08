@@ -6,6 +6,7 @@ const vercelConfig = JSON.parse(readFileSync('../vercel.json', 'utf8'))
 const pages = [
   ['/', 'dist/index.html'],
   ['/zh/', 'dist/zh/index.html'],
+  ['/compress-pdf-to-2mb', 'dist/compress-pdf-to-2mb.html'],
   ['/about', 'dist/about.html'],
   ['/website-inspection', 'dist/website-inspection.html'],
   ['/guides/', 'dist/guides/index.html'],
@@ -98,7 +99,65 @@ for (const [route, file] of pages) {
   console.log(`PASS ${route} bytes=${Buffer.byteLength(html)} sha256=${hash} jsonld=${jsonLdBlocks.length}`)
 }
 
+const targetPdfRoute = '/compress-pdf-to-2mb'
+const targetPdfUrl = `https://www.gotoolmatrix.com${targetPdfRoute}`
+const targetPdfHtml = existsSync('dist/compress-pdf-to-2mb.html')
+  ? readFileSync('dist/compress-pdf-to-2mb.html', 'utf8')
+  : ''
+
+const targetPdfSignals = [
+  ['English document language', '<html lang="en">'],
+  ['exact canonical', `<link rel="canonical" href="${targetPdfUrl}">`],
+  ['Open Graph URL', `<meta property="og:url" content="${targetPdfUrl}">`],
+  ['2 MB H1', '<h1>Compress PDF to 2MB Online</h1>'],
+  ['embedded compressor', 'src="/pdf/compress-pdf.html?embedded=1&amp;lang=en"'],
+  ['full-page fallback', 'href="/pdf/compress-pdf.html?lang=en"'],
+  ['PDF collection link', 'href="/pdf/"'],
+  ['compression guide link', 'href="/guides/compress-pdf.html"'],
+  ['privacy link', 'href="/privacy?lang=en"'],
+  ['subscription link', 'href="/subscription"'],
+  ['non-guarantee', 'An exact 2 MB result cannot be guaranteed.'],
+]
+
+for (const [signal, expected] of targetPdfSignals) {
+  if (!targetPdfHtml.includes(expected)) {
+    failed = true
+    console.error(`FAIL ${targetPdfRoute}: missing ${signal}`)
+  }
+}
+
+if (routeMap.get(targetPdfRoute) !== '/frontend/compress-pdf-to-2mb.html') {
+  failed = true
+  console.error(`FAIL ${targetPdfRoute}: missing canonical static route`)
+}
+
+const targetPdfJsonLdSource = targetPdfHtml.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)?.[1]
+const targetPdfJsonLd = targetPdfJsonLdSource ? JSON.parse(targetPdfJsonLdSource) : undefined
+const targetPdfTypes = new Set((targetPdfJsonLd?.['@graph'] || []).map(node => node['@type']))
+for (const type of ['HowTo', 'FAQPage']) {
+  if (!targetPdfTypes.has(type)) {
+    failed = true
+    console.error(`FAIL ${targetPdfRoute}: missing ${type} JSON-LD node`)
+  }
+}
+
 const sitemap = readFileSync('dist/sitemap.xml', 'utf8')
+const targetPdfSitemapEntry = `<loc>${targetPdfUrl}</loc>`
+if (sitemap.split(targetPdfSitemapEntry).length - 1 !== 1) {
+  failed = true
+  console.error(`FAIL sitemap: expected exactly one ${targetPdfUrl}`)
+}
+
+for (const [file, label] of [
+  ['dist/index.html', 'English homepage'],
+  ['dist/guides/compress-pdf.html', 'PDF compression guide'],
+]) {
+  if (!readFileSync(file, 'utf8').includes('href="/compress-pdf-to-2mb"')) {
+    failed = true
+    console.error(`FAIL ${label}: missing target-size landing-page link`)
+  }
+}
+
 for (const homepageUrl of [
   'https://www.gotoolmatrix.com/',
   'https://www.gotoolmatrix.com/zh/',
