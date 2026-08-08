@@ -258,6 +258,8 @@
     "verificationLink": "See the public test method, page-uniqueness checks and current parameter snapshot",
     "mergeGuideTitle": "Free online PDF merging guide",
     "mergeGuideDesc": "File order, page ranges, bookmarks, quality effects and browser-processing limits.",
+    "compressTo2MbTitle": "Compress PDF toward 2MB",
+    "compressTo2MbDesc": "Use the embedded compressor and compare settings for a 2MB upload limit without a guaranteed output size.",
     "compressPdfGuideTitle": "Free online PDF compression guide",
     "compressPdfGuideDesc": "Compare Condense and Photon, four compression levels, DPI, image quality and text selectability.",
     "imageGuideTitle": "Compress images while preserving quality",

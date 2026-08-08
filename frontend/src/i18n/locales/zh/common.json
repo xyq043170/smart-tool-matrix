@@ -258,6 +258,8 @@
     "verificationLink": "查看公开测试方法、页面唯一性检查与当前参数快照",
     "mergeGuideTitle": "免费在线合并 PDF 指南",
     "mergeGuideDesc": "文件排序、指定页码、书签与质量影响，以及浏览器端处理限制。",
+    "compressTo2MbTitle": "将 PDF 压缩到接近 2MB",
+    "compressTo2MbDesc": "使用嵌入式压缩工具比较不同档位，以满足 2MB 上传限制；结果大小不作保证。",
     "compressPdfGuideTitle": "免费在线压缩 PDF 指南",
     "compressPdfGuideDesc": "比较 Condense 与 Photon、四档压缩级别、DPI、图片质量及文本可选性。",
     "imageGuideTitle": "在线压缩图片且尽量保真",
