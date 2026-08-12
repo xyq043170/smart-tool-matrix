@@ -46,12 +46,17 @@
             "src": "/image",
             "status": 308,
             "headers": {
-                "Location": "/image/"
+                "Cross-Origin-Embedder-Policy": "require-corp",
+                "Cross-Origin-Opener-Policy": "same-origin"
             }
         },
         {
             "src": "/image/(.*)",
-            "dest": "https://sharp-web-tools.vercel.app/$1"
+            "dest": "https://sharp-web-tools.vercel.app/$1",
+            "headers": {
+                "Cross-Origin-Embedder-Policy": "require-corp",
+                "Cross-Origin-Opener-Policy": "same-origin"
+            }
         },
         {
             "src": "/developer",
