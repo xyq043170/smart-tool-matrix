@@ -46,6 +46,7 @@
             "src": "/image",
             "status": 308,
             "headers": {
+                "Location": "/image/",
                 "Cross-Origin-Embedder-Policy": "require-corp",
                 "Cross-Origin-Opener-Policy": "same-origin"
             }
