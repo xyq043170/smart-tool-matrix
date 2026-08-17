@@ -333,6 +333,25 @@ export default function MarketPage() {
           </div>
         </div>
       </section>
+
+      <section className="shell py-14 md:py-20" aria-labelledby="cross-site-title">
+        <div className="rounded-3xl border border-border bg-card p-7 md:flex md:items-center md:justify-between md:gap-10 md:p-10">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-primary">{tc('market.crossSiteLabel')}</p>
+            <h2 id="cross-site-title" className="mt-2 text-2xl font-bold tracking-tight md:text-3xl">{tc('market.crossSiteTitle')}</h2>
+            <p className="mt-3 max-w-2xl text-sm leading-7 text-muted-foreground">{tc('market.crossSiteDescription')}</p>
+          </div>
+          <a
+            href="https://aitoolpixel.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex shrink-0 items-center gap-2 text-sm font-bold text-primary hover:underline md:mt-0"
+          >
+            {tc('market.crossSiteCta')}
+            <ExternalLink className="h-4 w-4" aria-hidden="true" />
+          </a>
+        </div>
+      </section>
     </>
   )
 }

@@ -276,6 +276,10 @@
     "userQuotaDesc": "The default is 5 per day. Registration and sign-in involve account data described in the privacy policy.",
     "pricingFactTitle": "Paid pass price range",
     "pricingFactDesc": "1 day $0.99, 7 days $4.99, 30 days $9.99, and 365 days $59.99; checkout controls.",
-    "pricingFactLink": "See plans and renewal options"
+    "pricingFactLink": "See plans and renewal options",
+    "crossSiteLabel": "More focused photo tools",
+    "crossSiteTitle": "Need an ID photo or clean background?",
+    "crossSiteDescription": "Visit AI Tool Pixel for AI-assisted ID photos and fast background removal.",
+    "crossSiteCta": "Open AI Tool Pixel"
   }
 }

@@ -276,6 +276,10 @@
     "userQuotaDesc": "默认每日 5 次。注册与登录涉及账户数据，详见隐私政策。",
     "pricingFactTitle": "付费通行证价格范围",
     "pricingFactDesc": "1 天 $0.99、7 天 $4.99、30 天 $9.99、365 天 $59.99；结账页为最终依据。",
-    "pricingFactLink": "查看方案和续费方式"
+    "pricingFactLink": "查看方案和续费方式",
+    "crossSiteLabel": "更多专注型图片工具",
+    "crossSiteTitle": "需要制作证件照或移除背景？",
+    "crossSiteDescription": "前往 AI Tool Pixel，使用智能证件照制作和快速背景移除工具。",
+    "crossSiteCta": "打开 AI Tool Pixel"
   }
 }

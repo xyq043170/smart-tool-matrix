@@ -249,6 +249,14 @@ export default function MainLayout({ children }: MainLayoutProps) {
                                     <Link to="/changelog" className="opacity-70 hover:opacity-100">{t('legal.changelog')}</Link>
                                     <Link to="/subscription" className="opacity-70 hover:opacity-100">{t('nav.pricing')}</Link>
                                     <Link to="/auth/login" className="opacity-70 hover:opacity-100">{t('nav.login')}</Link>
+                                    <a
+                                        href="https://aitoolpixel.com/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="opacity-70 hover:opacity-100"
+                                    >
+                                        {t('market.crossSiteCta')}
+                                    </a>
                                 </div>
                             </div>
                         </div>
