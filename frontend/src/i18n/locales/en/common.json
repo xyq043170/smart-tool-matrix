@@ -280,6 +280,10 @@
     "crossSiteLabel": "More focused photo tools",
     "crossSiteTitle": "Need an ID photo or clean background?",
     "crossSiteDescription": "Visit AI Tool Pixel for AI-assisted ID photos and fast background removal.",
-    "crossSiteCta": "Open AI Tool Pixel"
+    "crossSiteCta": "Open AI Tool Pixel",
+    "cookSiftLabel": "More recipe tools",
+    "cookSiftTitle": "Save recipes and build one grocery list",
+    "cookSiftDescription": "Visit CookSift to extract recipes from any site and combine them into one clean grocery list.",
+    "cookSiftCta": "Open CookSift"
   }
 }

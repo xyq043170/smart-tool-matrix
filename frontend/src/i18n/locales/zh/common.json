@@ -280,6 +280,10 @@
     "crossSiteLabel": "更多专注型图片工具",
     "crossSiteTitle": "需要制作证件照或移除背景？",
     "crossSiteDescription": "前往 AI Tool Pixel，使用智能证件照制作和快速背景移除工具。",
-    "crossSiteCta": "打开 AI Tool Pixel"
+    "crossSiteCta": "打开 AI Tool Pixel",
+    "cookSiftLabel": "更省心的菜谱工具",
+    "cookSiftTitle": "收藏菜谱并生成一份购物清单",
+    "cookSiftDescription": "前往 CookSift，从任意网站提取菜谱并合并成一份清爽的购物清单。",
+    "cookSiftCta": "打开 CookSift"
   }
 }

@@ -257,6 +257,14 @@ export default function MainLayout({ children }: MainLayoutProps) {
                                     >
                                         {t('market.crossSiteCta')}
                                     </a>
+                                    <a
+                                        href="https://www.cooksift.com/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="opacity-70 hover:opacity-100"
+                                    >
+                                        {t('market.cookSiftCta')}
+                                    </a>
                                 </div>
                             </div>
                         </div>
