@@ -49,6 +49,16 @@ if (imageRootRoute?.status !== 308 || imageRootRoute?.headers?.Location !== '/im
   console.log('PASS /image: permanent redirect to canonical trailing-slash URL')
 }
 
+for (const [route, canonicalRoute] of [['/pdf', '/pdf/'], ['/developer', '/developer/']]) {
+  const rootRoute = vercelConfig.routes.find(({ src }) => src === route)
+  if (rootRoute?.status !== 308 || rootRoute?.headers?.Location !== canonicalRoute) {
+    failed = true
+    console.error(`FAIL ${route}: expected permanent redirect to ${canonicalRoute}`)
+  } else {
+    console.log(`PASS ${route}: permanent redirect to ${canonicalRoute}`)
+  }
+}
+
 const seoOrigin = 'https://seo-tools-project-production.up.railway.app'
 const expectedSeoRoutes = [
   ['/seo', `${seoOrigin}/check`],
@@ -165,6 +175,16 @@ for (const homepageUrl of [
   if (!sitemap.includes(`<loc>${homepageUrl}</loc>`)) {
     failed = true
     console.error(`FAIL sitemap: missing ${homepageUrl}`)
+  }
+}
+
+for (const collectionUrl of [
+  'https://www.gotoolmatrix.com/pdf/',
+  'https://www.gotoolmatrix.com/developer/',
+]) {
+  if (sitemap.split(`<loc>${collectionUrl}</loc>`).length - 1 !== 1) {
+    failed = true
+    console.error(`FAIL sitemap: expected exactly one ${collectionUrl}`)
   }
 }
 

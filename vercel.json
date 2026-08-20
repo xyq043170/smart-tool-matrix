@@ -36,7 +36,10 @@
         },
         {
             "src": "/pdf",
-            "dest": "https://pdf-tools-five-chi.vercel.app/"
+            "status": 308,
+            "headers": {
+                "Location": "/pdf/"
+            }
         },
         {
             "src": "/pdf/(.*)",
@@ -61,7 +64,10 @@
         },
         {
             "src": "/developer",
-            "dest": "https://dev-tools-blue.vercel.app/"
+            "status": 308,
+            "headers": {
+                "Location": "/developer/"
+            }
         },
         {
             "src": "/developer/(.*)",
