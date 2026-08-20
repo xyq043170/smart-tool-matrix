@@ -75,11 +75,11 @@
         },
         {
             "src": "/seo",
-            "dest": "https://seo-tools-project-production.up.railway.app/check"
+            "dest": "https://seo-tools-project.905501891.workers.dev/check"
         },
         {
             "src": "/seo/",
-            "dest": "https://seo-tools-project-production.up.railway.app/check"
+            "dest": "https://seo-tools-project.905501891.workers.dev/check"
         },
         {
             "src": "/website-inspection",
@@ -172,19 +172,19 @@
         },
         {
             "src": "/seo/(.*)",
-            "dest": "https://seo-tools-project-production.up.railway.app/check/$1"
+            "dest": "https://seo-tools-project.905501891.workers.dev/check/$1"
         },
         {
             "src": "/seo-api/(.*)",
-            "dest": "https://seo-tools-project-production.up.railway.app/api/$1"
+            "dest": "https://seo-tools-project.905501891.workers.dev/api/$1"
         },
         {
             "src": "/_astro/(.*)",
-            "dest": "https://seo-tools-project-production.up.railway.app/_astro/$1"
+            "dest": "https://seo-tools-project.905501891.workers.dev/_astro/$1"
         },
         {
             "src": "/fonts/(.*)",
-            "dest": "https://seo-tools-project-production.up.railway.app/fonts/$1"
+            "dest": "https://seo-tools-project.905501891.workers.dev/fonts/$1"
         },
         {
             "src": "/(.*)\\.(.*)",

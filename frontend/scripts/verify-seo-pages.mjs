@@ -59,7 +59,7 @@ for (const [route, canonicalRoute] of [['/pdf', '/pdf/'], ['/developer', '/devel
   }
 }
 
-const seoOrigin = 'https://seo-tools-project-production.up.railway.app'
+const seoOrigin = 'https://seo-tools-project.905501891.workers.dev'
 const expectedSeoRoutes = [
   ['/seo', `${seoOrigin}/check`],
   ['/seo/', `${seoOrigin}/check`],
