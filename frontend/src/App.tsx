@@ -18,6 +18,7 @@ import PolicyPage from '@/pages/PolicyPage'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { Sparkles } from 'lucide-react'
 import MainLayout from '@/layouts/MainLayout'
+import { buildPageTitle } from '@/page-meta'
 
 const API_BASE = import.meta.env.VITE_API_BASE || ''
 const IS_TAURI = import.meta.env.VITE_IS_TAURI === 'true'
@@ -69,20 +70,23 @@ function App() {
   }, [jwt])
 
   useEffect(() => {
-    const pageMeta: Record<string, { title: string; description: string; noindex?: boolean }> = {
-      '/': { title: `${t('app.title')} - ${t('app.subtitle')}`, description: t('market.categoryHint') },
-      '/about': { title: `${t('nav.about')} | ${t('app.title')}`, description: t('nav.aboutDesc') },
-      '/privacy': { title: `${t('legal.privacy')} | ${t('app.title')}`, description: t('legal.privacyDesc') },
-      '/terms': { title: `${t('legal.terms')} | ${t('app.title')}`, description: t('legal.termsDesc') },
-      '/changelog': { title: `${t('legal.changelog')} | ${t('app.title')}`, description: t('legal.changelogDesc') },
-      '/subscription': { title: `${t('nav.pricing')} | ${t('app.title')}`, description: t('legal.pricingDesc') },
+    const language = i18n.language || 'en'
+    const pageMeta: Record<string, { pageName: string; description: string; homepage?: boolean; noindex?: boolean }> = {
+      '/': { pageName: t('app.browserTagline'), description: t('market.categoryHint'), homepage: true },
+      '/about': { pageName: t('nav.about'), description: t('nav.aboutDesc') },
+      '/privacy': { pageName: t('legal.privacy'), description: t('legal.privacyDesc') },
+      '/terms': { pageName: t('legal.terms'), description: t('legal.termsDesc') },
+      '/changelog': { pageName: t('legal.changelog'), description: t('legal.changelogDesc') },
+      '/subscription': { pageName: t('nav.pricing'), description: t('legal.pricingDesc') },
     }
     const meta = pageMeta[location.pathname] || {
-      title: `${t('app.title')} - ${t('app.subtitle')}`,
+      pageName: t('app.browserTagline'),
       description: t('market.categoryHint'),
+      homepage: true,
       noindex: location.pathname.startsWith('/auth/') || location.pathname === '/account',
     }
-    document.title = meta.title
+    const title = buildPageTitle({ language, pageName: meta.pageName, homepage: meta.homepage })
+    document.title = title
     document.documentElement.lang = i18n.language?.startsWith('zh') ? 'zh-CN' : 'en'
     const description = document.querySelector<HTMLMetaElement>('meta[name="description"]')
     if (description) {
@@ -92,7 +96,7 @@ function App() {
     if (canonical) canonical.href = `https://www.gotoolmatrix.com${location.pathname === '/' ? '/' : location.pathname}`
     const robots = document.querySelector<HTMLMetaElement>('meta[name="robots"]')
     if (robots) robots.content = meta.noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1'
-    document.querySelectorAll<HTMLMetaElement>('meta[property="og:title"], meta[name="twitter:title"]').forEach(el => { el.content = meta.title })
+    document.querySelectorAll<HTMLMetaElement>('meta[property="og:title"], meta[name="twitter:title"]').forEach(el => { el.content = title })
     document.querySelectorAll<HTMLMetaElement>('meta[property="og:description"], meta[name="twitter:description"]').forEach(el => { el.content = meta.description })
     const ogUrl = document.querySelector<HTMLMetaElement>('meta[property="og:url"]')
     if (ogUrl) ogUrl.content = `https://www.gotoolmatrix.com${location.pathname === '/' ? '/' : location.pathname}`

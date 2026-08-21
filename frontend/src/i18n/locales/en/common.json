@@ -1,6 +1,7 @@
 {
   "app": {
     "title": "Smart Tool Matrix",
+    "browserTagline": "Practical Online Tools",
     "subtitle": "PDF · Image · Developer · Website Inspection",
     "loading": "Loading your tools...",
     "footer": "© {{year}} Smart Tool Matrix · Practical tools in one place"

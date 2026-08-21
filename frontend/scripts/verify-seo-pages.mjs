@@ -23,6 +23,43 @@ const pages = [
 const hashes = new Map()
 let failed = false
 
+const faviconSignals = [
+  '<link rel="icon" href="/icon.svg" type="image/svg+xml"',
+  '<link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png"',
+  '<link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png"',
+  '<link rel="apple-touch-icon" href="/apple-touch-icon.png"',
+  '<link rel="manifest" href="/site.webmanifest"',
+]
+
+function readPngSize(file) {
+  const png = readFileSync(file)
+  return [png.readUInt32BE(16), png.readUInt32BE(20)]
+}
+
+for (const [file, expectedSize] of [
+  ['dist/favicon-16x16.png', 16],
+  ['dist/favicon-32x32.png', 32],
+  ['dist/apple-touch-icon.png', 180],
+  ['dist/android-chrome-192x192.png', 192],
+  ['dist/android-chrome-512x512.png', 512],
+]) {
+  if (!existsSync(file) || readPngSize(file).some(size => size !== expectedSize)) {
+    failed = true
+    console.error(`FAIL ${file}: expected ${expectedSize}x${expectedSize} PNG`)
+  } else {
+    console.log(`PASS ${file}: ${expectedSize}x${expectedSize} PNG`)
+  }
+}
+
+for (const file of ['dist/icon.svg', 'dist/favicon.ico', 'dist/site.webmanifest']) {
+  if (!existsSync(file)) {
+    failed = true
+    console.error(`FAIL ${file}: missing favicon asset`)
+  } else {
+    console.log(`PASS ${file}: favicon asset exists`)
+  }
+}
+
 const homepageSignals = new Map([
   ['/', [
     ['document language', '<html lang="en">'],
@@ -94,6 +131,24 @@ for (const [route, file] of pages) {
   if (!title || !h1 || !canonical || !canonical.startsWith('https://www.gotoolmatrix.com/')) {
     failed = true
     console.error(`FAIL ${route}: title=${Boolean(title)} h1=${Boolean(h1)} canonical=${canonical || 'missing'}`)
+  }
+  const isChinese = html.includes('<html lang="zh-CN">')
+  const hasStandardTitle = route === '/'
+    ? title === 'Smart Tool Matrix | Practical Online Tools'
+    : route === '/zh/'
+      ? title === '智能工具矩阵｜实用在线工具'
+      : isChinese
+        ? title?.endsWith('｜智能工具矩阵')
+        : title?.endsWith(' | Smart Tool Matrix')
+  if (!hasStandardTitle) {
+    failed = true
+    console.error(`FAIL ${route}: non-standard browser title "${title || 'missing'}"`)
+  }
+  for (const signal of faviconSignals) {
+    if (!html.includes(signal)) {
+      failed = true
+      console.error(`FAIL ${route}: missing favicon declaration ${signal}`)
+    }
   }
   for (const [signal, expected] of homepageSignals.get(route) || []) {
     if (!html.includes(expected)) {

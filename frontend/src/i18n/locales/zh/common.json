@@ -1,6 +1,7 @@
 {
   "app": {
     "title": "智能工具矩阵",
+    "browserTagline": "实用在线工具",
     "subtitle": "PDF · 图片处理 · 开发者工具 · 网站检测",
     "loading": "工具加载中...",
     "footer": "© {{year}} 智能工具矩阵 · 一站式实用工具"

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Smart Tool Matrix">
+  <rect width="512" height="512" rx="112" fill="#2563eb"/>
+  <rect x="112" y="112" width="124" height="124" rx="28" fill="#ffffff"/>
+  <rect x="276" y="112" width="124" height="124" rx="28" fill="#bfdbfe"/>
+  <rect x="112" y="276" width="124" height="124" rx="28" fill="#dbeafe"/>
+  <rect x="276" y="276" width="124" height="124" rx="28" fill="#ffffff"/>
+</svg>
