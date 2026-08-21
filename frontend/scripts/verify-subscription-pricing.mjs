@@ -14,6 +14,7 @@ assert.deepEqual(
     { id: 'weekly', price: 4.99, durationDays: 7 },
     { id: 'monthly', price: 9.99, durationDays: 30 },
     { id: 'yearly', price: 59.99, durationDays: 365 },
+    { id: 'lifetime', price: 79, durationDays: null },
   ],
 )
 
@@ -28,6 +29,7 @@ const savingsPercent = (id) => {
 assert.equal(savingsPercent('weekly'), 28)
 assert.equal(savingsPercent('monthly'), 53)
 assert.equal(savingsPercent('yearly'), 51)
+assert.equal(byId.get('lifetime').comparisonId, null)
 
 const zh = readJson('../src/i18n/locales/zh/common.json').subscription
 const en = readJson('../src/i18n/locales/en/common.json').subscription
@@ -45,11 +47,13 @@ assert.deepEqual(zh.labels, {
   flexible: '灵活体验',
   popular: '最受欢迎',
   bestValue: '最划算',
+  lifetime: '永久版',
 })
 assert.deepEqual(en.labels, {
   flexible: 'Flexible',
   popular: 'Most popular',
   bestValue: 'Best value',
+  lifetime: 'Lifetime',
 })
 assert.equal(zh.savings, '省约 {{percent}}%')
 assert.equal(en.savings, 'Save about {{percent}}%')

@@ -306,7 +306,13 @@ export default function SubscriptionPage() {
 
       <Tabs
         value={billingType}
-        onValueChange={(value) => setBillingType(value as 'one_time' | 'recurring')}
+        onValueChange={(value) => {
+          const nextBillingType = value as 'one_time' | 'recurring'
+          setBillingType(nextBillingType)
+          if (nextBillingType === 'recurring' && selectedPlanId === 'lifetime') {
+            setSelectedPlanId('monthly')
+          }
+        }}
         className="mx-auto w-full max-w-md"
       >
         <TabsList className="grid h-auto w-full grid-cols-2 rounded-xl p-1">
@@ -322,7 +328,9 @@ export default function SubscriptionPage() {
         <p className="mt-3 text-center text-sm text-muted-foreground">
           {billingType === 'recurring'
             ? t('subscription.recurringDescription')
-            : t('subscription.oneTimeDescription')}
+            : selectedPlan.id === 'lifetime'
+              ? t('subscription.lifetimeDescription')
+              : t('subscription.oneTimeDescription')}
         </p>
       </Tabs>
 
@@ -343,9 +351,11 @@ export default function SubscriptionPage() {
           <CardContent className="mx-auto max-w-xl space-y-5 text-center">
             <div>
               <span className="text-4xl font-bold">{formatUsd(selectedPlan.price)}</span>
-              <span className="text-muted-foreground">
-                /{t(`subscription.period.${selectedPlan.period}`, selectedPlan.period)}
-              </span>
+              {selectedPlan.durationDays !== null && (
+                <span className="text-muted-foreground">
+                  /{t(`subscription.period.${selectedPlan.period}`, selectedPlan.period)}
+                </span>
+              )}
               {selectedSavingsPercent !== null && selectedPlan.comparisonId && (
                 <p className="mt-2 text-sm font-medium text-emerald-600 dark:text-emerald-400">
                   {t('subscription.savings', { percent: selectedSavingsPercent })}
@@ -355,7 +365,9 @@ export default function SubscriptionPage() {
                 </p>
               )}
               <p className="mt-2 text-sm text-muted-foreground">
-                {billingType === 'recurring'
+                {selectedPlan.id === 'lifetime'
+                  ? t('subscription.lifetimePayment')
+                  : billingType === 'recurring'
                   ? t('subscription.recurringPayment')
                   : t('subscription.oneTimePayment')}
               </p>
@@ -379,7 +391,7 @@ export default function SubscriptionPage() {
             <Button
               className="w-full"
               onClick={() => handlePurchase(selectedPlan.id)}
-              disabled={loading !== null}
+              disabled={loading !== null || (billingType === 'recurring' && selectedPlan.id === 'lifetime')}
             >
               {loading === `${billingType}:${selectedPlan.id}`
                 ? '...'

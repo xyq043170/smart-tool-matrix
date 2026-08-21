@@ -30,5 +30,13 @@
     "period": "year",
     "badgeKey": "bestValue",
     "comparisonId": "monthly"
+  },
+  {
+    "id": "lifetime",
+    "price": 79,
+    "durationDays": null,
+    "period": "lifetime",
+    "badgeKey": "lifetime",
+    "comparisonId": null
   }
 ]

@@ -175,6 +175,8 @@
     "oneTimeTab": "单次购买",
     "recurringTab": "自动续费",
     "oneTimeDescription": "支付一次，所选有效期结束后自动停止，不会再次扣款。",
+    "lifetimeDescription": "一次性付款，永久使用，无需续费，也没有到期时间。",
+    "lifetimePayment": "一次性付款 · 永久使用 · 不自动续费",
     "recurringDescription": "按所选周期自动扣款续费，可随时取消；取消后权益保留至本周期结束。",
     "startSubscription": "开通自动续费",
     "autoRenewOn": "自动续费中",
@@ -201,7 +203,8 @@
     "labels": {
       "flexible": "灵活体验",
       "popular": "最受欢迎",
-      "bestValue": "最划算"
+      "bestValue": "最划算",
+      "lifetime": "永久版"
     },
     "savings": "省约 {{percent}}%",
     "savingsBasis": {
@@ -213,13 +216,15 @@
       "daily": "日卡",
       "weekly": "周卡",
       "monthly": "月卡",
-      "yearly": "年卡"
+      "yearly": "年卡",
+      "lifetime": "永久版"
     },
     "period": {
       "day": "天",
       "week": "周",
       "month": "月",
-      "year": "年"
+      "year": "年",
+      "lifetime": "永久"
     },
     "feature": {
       "unlimited": "无限使用所有工具",

@@ -175,6 +175,8 @@
     "oneTimeTab": "One-time purchase",
     "recurringTab": "Auto-renew",
     "oneTimeDescription": "Pay once. Access ends after the selected period with no further charges.",
+    "lifetimeDescription": "Pay once for permanent access with no renewal or expiry date.",
+    "lifetimePayment": "One-time payment · Permanent access · No automatic renewal",
     "recurringDescription": "Renews automatically on the selected schedule. Cancel anytime and keep access through the paid period.",
     "startSubscription": "Start auto-renewal",
     "autoRenewOn": "Auto-renewal on",
@@ -201,7 +203,8 @@
     "labels": {
       "flexible": "Flexible",
       "popular": "Most popular",
-      "bestValue": "Best value"
+      "bestValue": "Best value",
+      "lifetime": "Lifetime"
     },
     "savings": "Save about {{percent}}%",
     "savingsBasis": {
@@ -213,13 +216,15 @@
       "daily": "Day Pass",
       "weekly": "Week Pass",
       "monthly": "Monthly",
-      "yearly": "Yearly"
+      "yearly": "Yearly",
+      "lifetime": "Lifetime Access"
     },
     "period": {
       "day": "day",
       "week": "week",
       "month": "month",
-      "year": "year"
+      "year": "year",
+      "lifetime": "lifetime"
     },
     "feature": {
       "unlimited": "Unlimited tool access",

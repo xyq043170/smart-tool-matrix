@@ -13,6 +13,12 @@ PLANS = [
     {"id": "weekly", "name": "Week Pass", "duration_days": 7, "price_usd": 4.99},
     {"id": "monthly", "name": "Monthly", "duration_days": 30, "price_usd": 9.99},
     {"id": "yearly", "name": "Yearly", "duration_days": 365, "price_usd": 59.99},
+    {
+        "id": "lifetime",
+        "name": "Lifetime Access",
+        "duration_days": None,
+        "price_usd": 79.00,
+    },
 ]
 
 def _as_datetime(value) -> datetime.datetime | None:
@@ -31,13 +37,14 @@ async def get_subscription_status(db: AsyncConnection, user_id: int) -> dict:
     await db.execute(
         "UPDATE subscriptions SET status = 'expired', updated_at = NOW() "
         "WHERE user_id = %s AND status IN ('active', 'scheduled', 'cancelled', 'suspended') "
-        "AND current_period_end <= NOW()",
+        "AND current_period_end IS NOT NULL AND current_period_end <= NOW()",
         (user_id,),
     )
     cursor = await db.execute(
         "SELECT id FROM subscriptions WHERE user_id = %s "
         "AND status IN ('active', 'scheduled', 'cancelled', 'suspended') "
-        "AND current_period_start <= NOW() AND current_period_end > NOW() "
+        "AND current_period_start <= NOW() "
+        "AND (current_period_end IS NULL OR current_period_end > NOW()) "
         "LIMIT 1",
         (user_id,),
     )
@@ -70,7 +77,8 @@ async def get_subscription_status(db: AsyncConnection, user_id: int) -> dict:
     cursor = await db.execute(
         "SELECT * FROM subscriptions WHERE user_id = %s "
         "AND status IN ('active', 'scheduled', 'cancelled', 'suspended') "
-        "AND current_period_start <= NOW() AND current_period_end > NOW() "
+        "AND current_period_start <= NOW() "
+        "AND (current_period_end IS NULL OR current_period_end > NOW()) "
         "ORDER BY current_period_end DESC, id DESC LIMIT 1",
         (user_id,),
     )
@@ -273,7 +281,7 @@ async def create_access_pass(
     paypal_order_id: str,
     paypal_capture_id: str,
     plan_id: str,
-    duration_days: int,
+    duration_days: int | None,
     commit: bool = True,
 ) -> dict:
     """Activate a one-time access pass, extending any remaining paid time."""
@@ -296,7 +304,11 @@ async def create_access_pass(
             current_end = current_end.replace(tzinfo=datetime.timezone.utc)
         if current_end > starts_at:
             starts_at = current_end
-    ends_at = starts_at + datetime.timedelta(days=duration_days)
+    ends_at = (
+        starts_at + datetime.timedelta(days=duration_days)
+        if duration_days is not None
+        else None
+    )
     status = "scheduled" if starts_at > now else "active"
 
     cursor = await db.execute(

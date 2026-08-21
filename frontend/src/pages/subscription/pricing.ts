@@ -3,7 +3,7 @@ import plansData from './plans.json'
 export type PricingPlan = {
   id: string
   price: number
-  durationDays: number
+  durationDays: number | null
   period: string
   badgeKey: string | null
   comparisonId: string | null
@@ -22,6 +22,7 @@ export function getSavingsPercent(plan: PricingPlan): number | null {
   if (!comparison) {
     throw new Error(`Missing comparison plan: ${plan.comparisonId}`)
   }
+  if (!plan.durationDays || !comparison.durationDays) return null
 
   const planDailyRate = plan.price / plan.durationDays
   const comparisonDailyRate = comparison.price / comparison.durationDays

@@ -13,7 +13,7 @@ export function PlanSelector({ selectedPlanId, onSelect }: PlanSelectorProps) {
     <div
       role="group"
       aria-label={t('subscription.planSelectorLabel')}
-      className="mx-auto grid w-full max-w-4xl grid-cols-4 gap-2 sm:gap-3"
+      className="mx-auto grid w-full max-w-4xl grid-cols-2 gap-2 sm:grid-cols-5 sm:gap-3"
     >
       {PLANS.map((plan) => {
         const selected = plan.id === selectedPlanId
